@@ -1,39 +1,210 @@
-html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Wrotron Consulting</title>
-     <link rel="stylesheet" href="styles.css">
-   </head>
-   <body>
-     <header>
-       <h1>Wrotron Consulting</h1>
-       <p>Empowering SMEs to Achieve Sustainable Growth</p>
-       <a href="#services">Our Services</a>
-     </header>
-     <main>
-       <section id="about">
-         <h2>About Us</h2>
-         <p>Founded by students from IIM Sambalpur, we specialize in financial advisory, marketing & branding, and operational excellence.</p>
-       </section>
-       <section id="services">
-         <h2>Services</h2>
-         <ul>
-           <li>Financial Planning & Analysis</li>
-           <li>Market Research & Branding</li>
-           <li>Operational Efficiency & Digital Transformation</li>
-         </ul>
-       </section>
-       <section id="contact">
-         <h2>Contact Us</h2>
-         <p>Email: contact@wrotron.in | Phone: +91-XXXXXXXXXX</p>
-       </section>
-     </main>
-     <footer>
-       <p>&copy; 2025 Wrotron Consulting. All Rights Reserved.</p>
-     </footer>
-     <script src="scripts.js"></script>
-   </body>
-   </html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrotron Consulting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Wrotron.in</a>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <div class="container">
+      <h1 class="hero-title">Founded by IIM Sambalpur Graduates</h1>
+      <p class="hero-subtitle">Empowering Small Organizations to Prosper</p>
+      <p class="hero-desc">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Started Today</a>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-container">
+      <div class="stat"><span>50+</span><p>SMEs Transformed</p></div>
+      <div class="stat"><span>95%</span><p>Success Rate</p></div>
+      <div class="stat"><span>2+</span><p>Years Experience</p></div>
+      <div class="stat"><p>Professional business consultancy team working with SME clients</p></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title">About Wrotron</h2>
+      <p class="section-desc">Founded by passionate graduates from IIM Sambalpur, Wrotron is dedicated to bridging the gap between academic excellence and practical business solutions for small and medium enterprises.</p>
+    </div>
+  </section>
+
+  <!-- Mission/Vision/Values -->
+  <section class="section cards-section">
+    <div class="container cards-container">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To empower small organizations with strategic insights and practical solutions that drive sustainable growth and operational excellence.</p>
+      </div>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To become the leading consultancy partner for SMEs, fostering innovation and growth across diverse industries.</p>
+      </div>
+      <div class="card">
+        <h3>Our Values</h3>
+        <p>Integrity, innovation, and impact drive everything we do. We believe in building lasting partnerships with our clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
+      <div class="cards-container">
+        <!-- Service cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="section team">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="cards-container">
+        <!-- Team cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">Client Testimonials</h2>
+      <div class="cards-container">
+        <!-- Testimonial cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="contact" class="section cta">
+    <div class="container">
+      <h2 class="section-title">Ready to Transform Your Business?</h2>
+      <p class="section-desc">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
+        <a href="#services" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h3>Wrotron.in</h3>
+        <p>Empowering small organizations to prosper through strategic consultancy and personalized support.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Strategic Planning</a></li>
+          <li><a href="#services">Operations Optimization</a></li>
+          <li><a href="#services">Financial Advisory</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@wrotron.in</p>
+        <p>📍 Sambalpur, Odisha, India</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© 2024 Wrotron.in. All rights reserved. | Founded by IIM Sambalpur Graduates</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e0059, #3b0066);
+  color: #fff;
+}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.navbar { position: sticky; top: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); z-index: 100; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.logo { color: #fff; font-size: 1.5rem; text-decoration: none; }
+.nav-menu { list-style: none; display: flex; gap: 1rem; }
+.nav-menu a { color: #fff; text-decoration: none; padding: 0.5rem; }
+.btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; }
+.btn-primary { background: #d600e6; color: #fff; }
+.btn-secondary { background: transparent; border: 2px solid #d600e6; color: #fff; }
+.hero { text-align: center; padding: 6rem 1rem; }
+.hero-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.hero-subtitle { font-size: 1.75rem; margin-bottom: 1rem; color: #ddd; }
+.hero-desc { max-width: 600px; margin: 0 auto 2rem; color: #ccc; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; }
+.stats { padding: 2rem 0; background: rgba(0,0,0,0.3); }
+.stats-container { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; gap: 1rem; }
+.stat span { font-size: 2rem; display: block; }
+.stat p { margin: 0.5rem 0 0; }
+.section { padding: 4rem 0; }
+.section-title { text-align: center; font-size: 2.25rem; margin-bottom: 0.5rem; }
+.section-desc { text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #ccc; }
+.cards-container { display: grid; gap: 1.5rem; }
+.cards-section .cards-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.services .cards-container { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.team .cards-container { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.testimonials .cards-container { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.card { background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.card h3 { margin-top: 0; color: #fff; }
+.card ul { padding-left: 1.25rem; margin: 0; }
+.card ul li { margin-bottom: 0.5rem; }
+.team-card h3 { margin-bottom: 0.25rem; }
+.testimonial-card p { font-style: italic; }
+.testimonial-card h4 { margin-top: 1rem; font-weight: bold; }
+.cta { padding: 4rem 0; text-align: center; background: rgba(0,0,0,0.4); }
+.footer { background: rgba(0,0,0,0.8); padding: 3rem 0 1rem; }
+.footer-container { display: flex; flex-wrap: wrap; gap: 2rem; }
+.footer-col { flex: 1 1 200px; }
+.footer-col h3, .footer-col h4 { margin-bottom: 1rem; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a { color: #ccc; text-decoration: none; }
+.footer-col p { margin: 0.5rem 0; color: #ccc; }
+.footer-col p::before { margin-right: 0.5rem; }
+.footer-col p:nth-of-type(1)::before { content: '📞'; }
+.footer-col p:nth-of-type(2)::before { content: '✉️'; }
+.footer-col p:nth-of-type(3)::before { content: '📍'; }
+.copyright { text-align: center; margin-top: 2rem; color: #777; }
