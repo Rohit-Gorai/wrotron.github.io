@@ -1,105 +1,155 @@
-<!doctype html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script type="module">
-      import { injectIntoGlobalHook } from "/@react-refresh";
-      injectIntoGlobalHook(window);
-      window.$RefreshReg$ = () => {};
-      window.$RefreshSig$ = () => (type) => type;
-    </script>
-
-    <script type="module" src="/@vite/client"></script>
-
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="generator" content="Hostinger Horizons" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wrotron Consulting</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Inline editor highlight styles */
-      #root[data-edit-mode-enabled="true"] [data-edit-id] {
-        cursor: pointer;
-        outline: 1px dashed #357DF9;
-        outline-offset: 2px;
-        min-height: 1em;
-      }
-      #root[data-edit-mode-enabled="true"] {
-        cursor: pointer;
-      }
-      #root[data-edit-mode-enabled="true"] [data-edit-id]:hover {
-        background-color: #357DF933;
-        outline-color: #357DF9;
-      }
-      @keyframes fadeInTooltip {
-        from {
-          opacity: 0;
-          transform: translateY(5px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      #inline-editor-disabled-tooltip {
-        display: none;
-        opacity: 0;
-        position: absolute;
-        background-color: #1D1E20;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 8px;
-        z-index: 10001;
-        font-size: 14px;
-        border: 1px solid #3B3D4A;
-        max-width: 184px;
-        text-align: center;
-      }
-      #inline-editor-disabled-tooltip.tooltip-active {
-        display: block;
-        animation: fadeInTooltip 0.2s ease-out forwards;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <!-- Static content for Wrotron Consulting site starts here -->
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="container nav-container">
-          <a href="#" class="logo">Wrotron.in</a>
-          <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- Hero Section -->
-      <header id="home" class="hero">
-        <div class="container">
-          <h1 class="hero-title">Founded by IIM Sambalpur Graduates</h1>
-          <p class="hero-subtitle">Empowering Small Organizations to Prosper</p>
-          <p class="hero-desc">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Get Started Today</a>
-            <a href="#services" class="btn btn-secondary">Explore Services</a>
-          </div>
-        </div>
-      </header>
-
-      <!-- Other sections omitted for brevity -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrotron Consulting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Wrotron.in</a>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Vite and inline editor scripts -->
-    <script type="module" src="/src/main.jsx"></script>
-    <script type="module">
-      // Inline editor runtime and fetch override code...
-      // (include the rest of your plugin scripts here)
-    </script>
-  </body>
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <div class="container">
+      <h1 class="hero-title">Founded by IIM Sambalpur Graduates</h1>
+      <p class="hero-subtitle">Empowering Small Organizations to Prosper</p>
+      <p class="hero-desc">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Started Today</a>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-container">
+      <div class="stat"><span>50+</span><p>SMEs Transformed</p></div>
+      <div class="stat"><span>95%</span><p>Success Rate</p></div>
+      <div class="stat"><span>2+</span><p>Years Experience</p></div>
+      <div class="stat"><p>Professional business consultancy team working with SME clients</p></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title">About Wrotron</h2>
+      <p class="section-desc">Founded by passionate graduates from IIM Sambalpur, Wrotron is dedicated to bridging the gap between academic excellence and practical business solutions for small and medium enterprises.</p>
+    </div>
+  </section>
+
+  <!-- Mission/Vision/Values -->
+  <section class="section cards-section">
+    <div class="container cards-container">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To empower small organizations with strategic insights and practical solutions that drive sustainable growth and operational excellence.</p>
+      </div>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To become the leading consultancy partner for SMEs, fostering innovation and growth across diverse industries.</p>
+      </div>
+      <div class="card">
+        <h3>Our Values</h3>
+        <p>Integrity, innovation, and impact drive everything we do. We believe in building lasting partnerships with our clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
+      <div class="cards-container">
+        <!-- Service cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="section team">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="cards-container">
+        <!-- Team cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">Client Testimonials</h2>
+      <div class="cards-container">
+        <!-- Testimonial cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="contact" class="section cta">
+    <div class="container">
+      <h2 class="section-title">Ready to Transform Your Business?</h2>
+      <p class="section-desc">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
+        <a href="#services" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h3>Wrotron.in</h3>
+        <p>Empowering small organizations to prosper through strategic consultancy and personalized support.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Strategic Planning</a></li>
+          <li><a href="#services">Operations Optimization</a></li>
+          <li><a href="#services">Financial Advisory</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@wrotron.in</p>
+        <p>📍 Sambalpur, Odisha, India</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© 2024 Wrotron.in. All rights reserved. | Founded by IIM Sambalpur Graduates</p>
+    </div>
+  </footer>
+</body>
 </html>
