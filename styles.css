@@ -1,0 +1,8 @@
+css
+   body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+   header { text-align: center; padding: 50px; background: #f4f4f4; }
+   header h1 { font-size: 3rem; margin: 0; }
+   main { padding: 20px; }
+   section { margin-bottom: 2rem; }
+   footer { background: #333; color: #fff; text-align: center; padding: 1rem; }
+   a { color: #007ACC; text-decoration: none; }
