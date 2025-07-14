@@ -1,155 +1,238 @@
 <!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wrotron Consulting</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- Vite refresh and client scripts -->
+  <script type="module">import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;</script>
+  <script type="module" src="/@vite/client"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">Wrotron.in</a>
-      <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div id="root" data-edit-mode-enabled>
 
-  <!-- Hero Section -->
-  <header id="home" class="hero">
-    <div class="container">
-      <h1 class="hero-title">Founded by IIM Sambalpur Graduates</h1>
-      <p class="hero-subtitle">Empowering Small Organizations to Prosper</p>
-      <p class="hero-desc">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Get Started Today</a>
-        <a href="#services" class="btn btn-secondary">Explore Services</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container stats-container">
-      <div class="stat"><span>50+</span><p>SMEs Transformed</p></div>
-      <div class="stat"><span>95%</span><p>Success Rate</p></div>
-      <div class="stat"><span>2+</span><p>Years Experience</p></div>
-      <div class="stat"><p>Professional business consultancy team working with SME clients</p></div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2 class="section-title">About Wrotron</h2>
-      <p class="section-desc">Founded by passionate graduates from IIM Sambalpur, Wrotron is dedicated to bridging the gap between academic excellence and practical business solutions for small and medium enterprises.</p>
-    </div>
-  </section>
-
-  <!-- Mission/Vision/Values -->
-  <section class="section cards-section">
-    <div class="container cards-container">
-      <div class="card">
-        <h3>Our Mission</h3>
-        <p>To empower small organizations with strategic insights and practical solutions that drive sustainable growth and operational excellence.</p>
-      </div>
-      <div class="card">
-        <h3>Our Vision</h3>
-        <p>To become the leading consultancy partner for SMEs, fostering innovation and growth across diverse industries.</p>
-      </div>
-      <div class="card">
-        <h3>Our Values</h3>
-        <p>Integrity, innovation, and impact drive everything we do. We believe in building lasting partnerships with our clients.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-desc">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
-      <div class="cards-container">
-        <!-- Service cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section id="team" class="section team">
-    <div class="container">
-      <h2 class="section-title">Meet Our Team</h2>
-      <div class="cards-container">
-        <!-- Team cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section testimonials">
-    <div class="container">
-      <h2 class="section-title">Client Testimonials</h2>
-      <div class="cards-container">
-        <!-- Testimonial cards here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section id="contact" class="section cta">
-    <div class="container">
-      <h2 class="section-title">Ready to Transform Your Business?</h2>
-      <p class="section-desc">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
-        <a href="#services" class="btn btn-secondary">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-col">
-        <h3>Wrotron.in</h3>
-        <p>Empowering small organizations to prosper through strategic consultancy and personalized support.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Strategic Planning</a></li>
-          <li><a href="#services">Operations Optimization</a></li>
-          <li><a href="#services">Financial Advisory</a></li>
-          <li><a href="#services">Digital Transformation</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#team">Our Team</a></li>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo"><img src="logo.png" alt="Wrotron Logo" /></a>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn btn-primary">Contact Us</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Contact Info</h4>
-        <p>📞 +91 98765 43210</p>
-        <p>✉️ hello@wrotron.in</p>
-        <p>📍 Sambalpur, Odisha, India</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+      <div class="container hero-container">
+        <div class="hero-text">
+          <h1 class="hero-title">Empowering Small Organizations to Prosper</h1>
+          <p class="hero-desc">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get Started Today</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+          </div>
+          <div class="stats">
+            <div><span>50+</span><p>SMEs Transformed</p></div>
+            <div><span>95%</span><p>Success Rate</p></div>
+            <div><span>2+</span><p>Years Experience</p></div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="hero.jpg" alt="Consulting team at work" />
+        </div>
       </div>
-    </div>
-    <div class="container copyright">
-      <p>© 2024 Wrotron.in. All rights reserved. | Founded by IIM Sambalpur Graduates</p>
-    </div>
-  </footer>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">About Wrotron</h2>
+        <p class="section-desc">Founded by passionate graduates from IIM Sambalpur, Wrotron is dedicated to bridging the gap between academic excellence and practical business solutions for small and medium enterprises.</p>
+      </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="section cards-section">
+      <div class="container cards-container">
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>To empower small organizations with strategic insights and practical solutions that drive sustainable growth and operational excellence.</p>
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>To become the leading consultancy partner for SMEs, fostering innovation and growth across diverse industries.</p>
+        </div>
+        <div class="card">
+          <h3>Our Values</h3>
+          <p>Integrity, innovation, and impact drive everything we do. We believe in building lasting partnerships with our clients.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-desc">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
+        <div class="cards-container">
+          <div class="card">
+            <h3>Strategic Planning</h3>
+            <ul>
+              <li>Market Analysis</li>
+              <li>Competitive Intelligence</li>
+              <li>Growth Roadmaps</li>
+              <li>Risk Assessment</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Operations Optimization</h3>
+            <ul>
+              <li>Process Mapping</li>
+              <li>Workflow Optimization</li>
+              <li>Cost Reduction</li>
+              <li>Quality Management</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Financial Advisory</h3>
+            <ul>
+              <li>Financial Planning</li>
+              <li>Budget Management</li>
+              <li>Investment Strategy</li>
+              <li>Performance Metrics</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Digital Transformation</h3>
+            <ul>
+              <li>Technology Assessment</li>
+              <li>Digital Strategy</li>
+              <li>Implementation Support</li>
+              <li>Training Programs</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Market Expansion</h3>
+            <ul>
+              <li>Market Research</li>
+              <li>Entry Strategies</li>
+              <li>Partnership Development</li>
+              <li>Brand Positioning</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Organizational Development</h3>
+            <ul>
+              <li>Team Building</li>
+              <li>Leadership Development</li>
+              <li>Culture Transformation</li>
+              <li>Change Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="cards-container">
+          <div class="card team-card">
+            <h3>Rajesh Kumar</h3>
+            <p>Founder & CEO<br /><em>MBA, IIM Sambalpur</em></p>
+          </div>
+          <div class="card team-card">
+            <h3>Priya Sharma</h3>
+            <p>Co-Founder & COO<br /><em>MBA, IIM Sambalpur</em></p>
+          </div>
+          <div class="card team-card">
+            <h3>Amit Patel</h3>
+            <p>Senior Consultant<br /><em>MBA, IIM Sambalpur</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="cards-container">
+          <div class="card testimonial-card">
+            <p>“Wrotron transformed our operations completely. Their strategic insights helped us increase revenue by 150% in just 8 months.”</p>
+            <h4>Sarah Johnson, CEO, TechStart Solutions</h4>
+          </div>
+          <div class="card testimonial-card">
+            <p>“The team's expertise in process optimization saved us over $200K annually. Truly exceptional consultancy services.”</p>
+            <h4>Michael Chen, Founder, GreenLeaf Manufacturing</h4>
+          </div>
+          <div class="card testimonial-card">
+            <p>“Professional, insightful, and results-driven. Wrotron helped us expand to 3 new markets successfully.”</p>
+            <h4>Anita Desai, Managing Director, Urban Retail Co.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="section cta">
+      <div class="container">
+        <h2 class="section-title">Ready to Transform Your Business?</h2>
+        <p class="section-desc">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Schedule Free Consultation</a>
+          <a href="#services" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>Wrotron.in</h3>
+          <p>Empowering small organizations to prosper through strategic consultancy and personalized support.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Strategic Planning</a></li>
+            <li><a href="#services">Operations Optimization</a></li>
+            <li><a href="#services">Financial Advisory</a></li>
+            <li><a href="#services">Digital Transformation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ hello@wrotron.in</p>
+          <p>📍 Sambalpur, Odisha, India</p>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>© 2024 Wrotron.in. All rights reserved. | Founded by IIM Sambalpur Graduates</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JS for inline editor and Vite bundle -->
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
