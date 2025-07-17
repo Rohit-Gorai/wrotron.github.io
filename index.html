@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Wrotron Consulting - Empowering Small Organizations</title>
-    <meta name="description" content="Wrotron offers strategic consultancy services for SMEs, founded by IIM Alumni. We specialize in strategic planning, operations, finance, and digital transformation to drive sustainable growth.">
-    <meta name="keywords" content="Consulting, SME, IIM, Strategic Planning, Business Growth, Operations Optimization, Financial Advisory">
+    <title>Wrotron – MSME Growth Consultants | ₹5–50 Cr Strategies</title>
+    <meta name="description" content="Wrotron offers tailored strategy, finance, and market expansion services for MSMEs with ₹5–50 Cr turnover. Get 20% revenue uplift in 6 months.">
+    <meta name="keywords" content="Consulting, MSME, IIM, Strategic Planning, Business Growth, Cash Flow, GST, Market Expansion">
     
     <!-- Favicon (replace with your actual favicon.ico file) -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -97,6 +97,40 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* =================================================================
+           DROPDOWN MENU STYLES
+        ================================================================== */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2e1065; /* purple-900 */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content a {
+            color: #d1d5db;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover { 
+            background-color: #5b21b6; /* purple-700 */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -116,13 +150,20 @@
             </a>
             <div class="flex items-center">
                 <ul class="hidden lg:flex items-center space-x-8">
-                    <li><a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a></li>
-                    <li><a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors">About</a></li>
+                    <li><a href="/" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Who We Are</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#team">Team</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#services" class="text-gray-300 hover:text-purple-400 transition-colors">Services</a></li>
-                    <li><a href="#team" class="text-gray-300 hover:text-purple-400 transition-colors">Team</a></li>
-                    <li><a href="#testimonials" class="text-gray-300 hover:text-purple-400 transition-colors">Testimonials</a></li>
+                    <li><a href="#case-studies" class="text-gray-300 hover:text-purple-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#resources" class="text-gray-300 hover:text-purple-400 transition-colors">Resources</a></li>
+                    <li><a href="#pricing" class="text-gray-300 hover:text-purple-400 transition-colors">Pricing & Packages</a></li>
                 </ul>
-                <a href="#contact" id="contact-nav-btn" class="open-modal-btn hidden lg:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
+                <a href="#contact" class="open-modal-btn hidden lg:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
                     Contact Us
                 </a>
                 <button id="mobile-menu-button" class="lg:hidden text-white ml-4 focus:outline-none">
@@ -133,11 +174,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-black/20">
             <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <li><a href="#home" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Home</a></li>
-                <li><a href="#about" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">About</a></li>
-                <li><a href="#services" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Services</a></li>
+                <li><a href="/" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Home</a></li>
+                <li><a href="#about" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">About Us</a></li>
                 <li><a href="#team" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Team</a></li>
-                <li><a href="#testimonials" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Testimonials</a></li>
+                <li><a href="#services" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Services</a></li>
+                <li><a href="#case-studies" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Case Studies</a></li>
+                <li><a href="#resources" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Resources</a></li>
+                <li><a href="#pricing" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Pricing & Packages</a></li>
                 <li><a href="#contact" class="open-modal-btn block py-2 px-3 mt-2 bg-purple-600 rounded text-center text-white">Contact Us</a></li>
             </ul>
         </div>
@@ -151,84 +194,137 @@
              HERO SECTION
         ================================================================== -->
         <section id="home" class="py-20 lg:py-32">
-            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left reveal">
-                    <div class="inline-block bg-purple-600/50 text-purple-300 text-sm font-semibold py-1 px-4 rounded-full border border-purple-500">
-                        An IIM Alumni Initiative
-                    </div>
-                    <h1 class="mt-4 text-4xl lg:text-6xl font-black text-white tracking-tighter leading-tight">Empowering <strong class="text-purple-400">Small Organizations</strong> to <strong class="text-purple-400">Prosper</strong></h1>
-                    <p class="mt-6 text-lg lg:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
-                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <button class="open-modal-btn flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
-                            <span>Get Started Today</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-                        </button>
-                        <a href="#services" class="flex items-center justify-center bg-transparent border-2 border-purple-500 text-purple-300 font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 hover:bg-purple-500/20 transition-all duration-300">Explore Services</a>
-                    </div>
-                    <div class="mt-12 flex justify-center lg:justify-start space-x-8 sm:space-x-12">
-                        <div class="text-center">
-                            <span class="text-3xl font-bold text-white">50+</span>
-                            <p class="text-gray-400">SMEs Transformed</p>
-                        </div>
-                        <div class="text-center">
-                            <span class="text-3xl font-bold text-white">95%</span>
-                            <p class="text-gray-400">Success Rate</p>
-                        </div>
-                        <div class="text-center">
-                            <span class="text-3xl font-bold text-white">2+</span>
-                            <p class="text-gray-400">Years Experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden lg:block reveal" style="transition-delay: 200ms;">
-                    <img src="https://placehold.co/600x500/1e1b4b/c084fc?text=Wrotron+Consulting" alt="A team of professionals collaborating in a modern office environment." class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            <div class="container mx-auto px-6 text-center reveal">
+                <h1 class="text-4xl lg:text-6xl font-black text-white tracking-tighter leading-tight">Tailored Growth Strategies for ₹5–50 Cr MSMEs</h1>
+                <p class="mt-6 text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">Unlock 20% revenue uplift in 6 months with data-driven consulting.</p>
+                <ul class="mt-8 space-y-4 text-lg text-gray-300 max-w-xl mx-auto text-left md:text-center">
+                    <li class="flex items-center justify-center"><svg class="w-5 h-5 mr-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Optimize working capital for sustainable cash flow</li>
+                    <li class="flex items-center justify-center"><svg class="w-5 h-5 mr-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Expand to new markets with targeted go-to-market plans</li>
+                    <li class="flex items-center justify-center"><svg class="w-5 h-5 mr-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Improve EBITDA margins through cost-control strategies</li>
+                </ul>
+                <div class="mt-10">
+                    <a href="#" class="open-modal-btn inline-block bg-purple-600 text-white font-bold py-4 px-8 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">See Your ROI Now</a>
                 </div>
             </div>
         </section>
 
-        <!-- Other sections remain the same -->
+        <!-- =================================================================
+             ABOUT & CORE VALUES SECTION
+        ================================================================== -->
         <section id="about" class="py-20 bg-black/20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">About Wrotron</h2>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Founded by passionate IIM alumni, Wrotron is dedicated to bridging the gap between academic excellence and practical business solutions for small and medium enterprises.</p>
-                
-                <div class="mt-12 grid md:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SERVICES SECTION
+        ================================================================== -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Our Services</h2>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-2 gap-8 text-left">
+                    <article class="glass-card p-8 rounded-2xl reveal">
+                        <h3 class="text-2xl font-bold text-white">Cash-Flow & Working Capital Management</h3>
+                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Customized cash-flow model, 90-day burn analysis</p>
+                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 3 weeks</p>
+                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Reduce DSO by 15%</p>
+                    </article>
+                    <article class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;">
+                        <h3 class="text-2xl font-bold text-white">Financial Compliance & GST Advisory</h3>
+                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> End-to-end GST filing support, quarterly compliance reviews</p>
+                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> Ongoing with monthly check-ins</p>
+                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Zero compliance penalties, streamlined filings</p>
+                    </article>
+                    <article class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-bold text-white">Market Expansion Strategy</h3>
+                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Market entry report, channel partner mapping</p>
+                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 4 weeks</p>
+                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Identify 2 new sales channels with 10% projected revenue growth</p>
+                    </article>
+                    <article class="glass-card p-8 rounded-2xl reveal border-2 border-purple-500" style="transition-delay: 300ms;">
+                        <h3 class="text-2xl font-bold text-white">Tech Enablement (Add-On)</h3>
+                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Digital diagnostics, software integration plan</p>
+                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 6 weeks</p>
+                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> 25% improvement in operational efficiency</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             CASE STUDIES & TESTIMONIALS SECTION
+        ================================================================== -->
+        <section id="case-studies" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white text-center reveal">Case Studies & Testimonials</h2>
+                <div class="mt-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="glass-card p-8 rounded-2xl reveal">
-                        <div class="inline-block p-4 bg-purple-600/50 rounded-xl border border-purple-500 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Our Mission</h3>
-                        <p class="mt-4 text-gray-300">To empower small organizations with strategic insights and practical solutions that drive sustainable growth and operational excellence.</p>
+                        <h4 class="text-2xl font-bold text-white">ABC Textiles</h4>
+                        <p class="text-purple-300 font-semibold mt-1"><em>Textile Manufacturing, Gujarat</em></p>
+                        <ul class="mt-4 space-y-3 text-left">
+                            <li><strong>Challenge:</strong> High DSO (90 days) & erratic cash flow</li>
+                            <li><strong>Solution:</strong> New invoicing protocol + tailored cash-flow model</li>
+                            <li><strong>Results:</strong>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li>DSO ↓ from 90 to 60 days (–33%)</li>
+                                    <li>Cash reserves ↑ by ₹50 L in 4 months</li>
+                                    <li>Revenue growth +18% in Q1 2025</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
-                        <div class="inline-block p-4 bg-purple-600/50 rounded-xl border border-purple-500 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Our Vision</h3>
-                        <p class="mt-4 text-gray-300">To become the leading consultancy partner for SMEs, fostering innovation and growth across diverse industries.</p>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;">
-                        <div class="inline-block p-4 bg-purple-600/50 rounded-xl border border-purple-500 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Our Values</h3>
-                        <p class="mt-4 text-gray-300">Integrity, innovation, and impact drive everything we do. We believe in building lasting partnerships with our clients.</p>
+                    <div class="reveal" style="transition-delay: 200ms;">
+                        <blockquote class="bg-purple-900/30 border-l-4 border-purple-500 p-6 rounded-lg">
+                           <p class="text-xl italic">“Wrotron’s cash-flow overhaul transformed our working capital – within 3 months we freed up ₹30 Lakh and cut DSO by 25 days.”</p>
+                           <cite class="block text-right mt-4 not-italic font-semibold text-purple-300">— Priya Sharma, CFO, ABC Textiles</cite>
+                        </blockquote>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-20">
+        <!-- =================================================================
+             PRICING SECTION
+        ================================================================== -->
+        <section id="pricing" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Our Services</h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
-                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    <div class="glass-card p-8 rounded-2xl reveal"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Strategic Planning</h3><p class="mt-2 text-gray-400">Develop comprehensive business strategies that align with your vision and market opportunities.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Market Analysis</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Competitive Intelligence</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Growth Roadmaps</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Risk Assessment</li></ul></div></div></div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Operations Optimization</h3><p class="mt-2 text-gray-400">Streamline processes and improve efficiency to maximize productivity and reduce costs.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Process Mapping</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Workflow Optimization</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Cost Reduction</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Quality Management</li></ul></div></div></div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div><div><h3 class="text-xl font-bold text-white">Financial Advisory</h3><p class="mt-2 text-gray-400">Expert financial guidance to improve cash flow, profitability, and investment decisions.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Financial Planning</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Budget Management</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Investment Strategy</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Performance Metrics</li></ul></div></div></div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 300ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div><div><h3 class="text-xl font-bold text-white">Digital Transformation</h3><p class="mt-2 text-gray-400">Modernize your business with technology solutions that drive growth and efficiency.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Technology Assessment</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Digital Strategy</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Implementation Support</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Training Programs</li></ul></div></div></div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.757 14h8.486M12 17.75l-3.75-3.75M12 17.75l3.75-3.75" /></svg></div><div><h3 class="text-xl font-bold text-white">Market Expansion</h3><p class="mt-2 text-gray-400">Strategic guidance for entering new markets and scaling your business operations.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Market Research</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Entry Strategies</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Partnership Development</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Brand Positioning</li></ul></div></div></div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 500ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Organizational Development</h3><p class="mt-2 text-gray-400">Build strong teams and organizational culture that supports sustainable growth.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Team Building</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Leadership Development</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Culture Transformation</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Change Management</li></ul></div></div></div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Pricing & Packages</h2>
+                <div class="mt-12 grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl reveal">
+                        <h4 class="text-2xl font-bold text-white">Strategy Sprint (Bronze)</h4>
+                        <p class="mt-2 text-gray-400">Ideal for diagnosing your growth bottlenecks</p>
+                        <p class="text-3xl font-bold text-white my-4">Starts at ₹2 Lakh</p>
+                        <p class="text-gray-400 font-semibold">4-week engagement</p>
+                        <ul class="mt-6 space-y-2 text-left">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>2 strategist workshops</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Diagnostic report</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>3 priority recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl reveal border-2 border-purple-500" style="transition-delay: 200ms;">
+                        <h4 class="text-2xl font-bold text-white">Growth Accelerator (Silver)</h4>
+                        <p class="mt-2 text-gray-400">Hands-on implementation support</p>
+                        <p class="text-3xl font-bold text-white my-4">₹5 Lakh</p>
+                        <p class="text-gray-400 font-semibold">8-week engagement</p>
+                        <ul class="mt-6 space-y-2 text-left">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>All Bronze deliverables</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Implementation roadmap</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Monthly check-ins</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;">
+                        <h4 class="text-2xl font-bold text-white">Transformation Partnership (Gold)</h4>
+                        <p class="mt-2 text-gray-400">End-to-end consulting with performance bonus</p>
+                        <p class="text-3xl font-bold text-white my-4">Starts at ₹12 Lakh</p>
+                        <p class="text-gray-400 font-semibold">6-month partnership</p>
+                        <ul class="mt-6 space-y-2 text-left">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>All Silver deliverables</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Execution support</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>KPI tracking dashboard</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -239,104 +335,40 @@
         <section id="team" class="py-20 bg-black/20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Meet Our Team</h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Passionate professionals from IIM bringing academic excellence and real-world experience to drive your business success.</p>
-                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="mt-12 grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Team Card 1 -->
-                    <div class="glass-card p-8 rounded-2xl reveal text-center relative">
-                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=RK" alt="Rajesh Kumar, Founder & CEO" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
-                        <h3 class="text-2xl font-bold text-white">Rajesh Kumar</h3>
-                        <p class="text-purple-400 font-semibold">Founder & CEO</p>
-                        <p class="text-gray-400 mt-1">MBA, IIM</p>
-                        <p class="text-gray-300 mt-2">Strategic Planning & Operations</p>
-                        <a href="#" class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center bg-purple-600/80 rounded-full hover:bg-purple-500 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" /></svg>
-                        </a>
+                    <div class="glass-card p-8 rounded-2xl reveal text-center">
+                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=RG" alt="Rohit Kumar Gorai" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
+                        <h5 class="text-2xl font-bold text-white">Rohit Kumar Gorai</h5>
+                        <p class="text-purple-400 font-semibold">Founder & Lead Consultant</p>
+                        <p class="text-gray-400 mt-2">MBA, IIM Sambalpur | ex-GCP Developer at Persistent Systems. Expert in financial modeling & MSME growth.</p>
+                        <a href="https://linkedin.com/in/rohitgorai" target="_blank" class="inline-block mt-4 text-purple-300 hover:text-white transition-colors">View LinkedIn</a>
                     </div>
                     <!-- Team Card 2 -->
-                    <div class="glass-card p-8 rounded-2xl reveal text-center relative" style="transition-delay: 200ms;">
-                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=PS" alt="Priya Sharma, Co-Founder & COO" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
-                        <h3 class="text-2xl font-bold text-white">Priya Sharma</h3>
-                        <p class="text-purple-400 font-semibold">Co-Founder & COO</p>
-                        <p class="text-gray-400 mt-1">MBA, IIM</p>
-                        <p class="text-gray-300 mt-2">Financial Advisory & Analytics</p>
-                        <a href="#" class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center bg-purple-600/80 rounded-full hover:bg-purple-500 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" /></svg>
-                        </a>
-                    </div>
-                    <!-- Team Card 3 -->
-                    <div class="glass-card p-8 rounded-2xl reveal text-center relative" style="transition-delay: 400ms;">
-                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=AP" alt="Amit Patel, Senior Consultant" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
-                        <h3 class="text-2xl font-bold text-white">Amit Patel</h3>
-                        <p class="text-purple-400 font-semibold">Senior Consultant</p>
-                        <p class="text-gray-400 mt-1">MBA, IIM</p>
-                        <p class="text-gray-300 mt-2">Digital Transformation & Technology</p>
-                        <a href="#" class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center bg-purple-600/80 rounded-full hover:bg-purple-500 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" /></svg>
-                        </a>
+                    <div class="glass-card p-8 rounded-2xl reveal text-center" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=DA" alt="Dipesh Avasthi" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
+                        <h5 class="text-2xl font-bold text-white">Dipesh Avasthi</h5>
+                        <p class="text-purple-400 font-semibold">Senior Advisor</p>
+                        <p class="text-gray-400 mt-2">15+ years in strategic planning & operations for manufacturing SMEs. Ex-XYZ Consulting.</p>
+                        <a href="https://linkedin.com/in/dipeshavasthi" target="_blank" class="inline-block mt-4 text-purple-300 hover:text-white transition-colors">View LinkedIn</a>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- =================================================================
-             TESTIMONIALS SECTION
+             RESOURCES SECTION
         ================================================================== -->
-        <section id="testimonials" class="py-20">
+        <section id="resources" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Client Testimonials</h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Hear from our satisfied clients who have transformed their businesses with our strategic guidance and support.</p>
-                <div class="mt-12 grid lg:grid-cols-3 gap-8 text-left">
-                     <div class="glass-card p-8 rounded-2xl reveal">
-                        <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                        </div>
-                        <p class="text-gray-300">“Wrotron transformed our operations completely. Their strategic insights helped us increase revenue by 150% in just 8 months.”</p>
-                        <div class="flex items-center mt-6">
-                            <div class="w-12 h-12 flex items-center justify-center bg-purple-500 rounded-full font-bold text-white text-xl mr-4">S</div>
-                            <div>
-                                <h4 class="font-bold text-white">Sarah Johnson</h4>
-                                <p class="text-gray-400">CEO, TechStart Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
-                        <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                        </div>
-                        <p class="text-gray-300">“The team's expertise in process optimization saved us over $200K annually. Truly exceptional consultancy services.”</p>
-                        <div class="flex items-center mt-6">
-                            <div class="w-12 h-12 flex items-center justify-center bg-purple-500 rounded-full font-bold text-white text-xl mr-4">M</div>
-                            <div>
-                                <h4 class="font-bold text-white">Michael Chen</h4>
-                                <p class="text-gray-400">Founder, GreenLeaf Manufacturing</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;">
-                        <div class="flex text-yellow-400 mb-4">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                        </div>
-                        <p class="text-gray-300">“Professional, insightful, and results-driven. Wrotron helped us expand to 3 new markets successfully.”</p>
-                        <div class="flex items-center mt-6">
-                            <div class="w-12 h-12 flex items-center justify-center bg-purple-500 rounded-full font-bold text-white text-xl mr-4">A</div>
-                            <div>
-                                <h4 class="font-bold text-white">Anita Desai</h4>
-                                <p class="text-gray-400">Managing Director, Urban Retail Co.</p>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Insights for MSMEs</h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Practical guides, policy updates, and growth hacks—fresh every fortnight.</p>
+                <div class="mt-12 max-w-2xl mx-auto text-left">
+                    <ul class="space-y-4">
+                        <li class="glass-card p-6 rounded-lg reveal"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">How to Improve Your Cash Cycle in 5 Steps</a></li>
+                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 100ms;"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">Claiming MSME Subsidies: A Step-by-Step Guide</a></li>
+                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 200ms;"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">5 Data-Driven Strategies to Boost EBITDA</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -344,16 +376,17 @@
         <!-- =================================================================
              CTA SECTION
         ================================================================== -->
-        <section id="contact" class="py-20">
+        <section id="contact" class="py-20 bg-black/20">
             <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white">Ready to Transform Your <strong class="text-purple-400">Business?</strong></h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white">Ready for a Free 30-Min Financial Health Check?</h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Book a no-obligation session to uncover hidden growth opportunities.</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <button class="open-modal-btn flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
                         <span>Schedule Free Consultation</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </button>
-                    <a href="#services" class="bg-transparent border-2 border-gray-600 text-gray-300 font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 hover:bg-gray-800/50 transition-all duration-300">Learn More</a>
+                    <a href="https://wa.me/919876543210" target="_blank" class="flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300">
+                        <span>Start Chat on WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -363,41 +396,17 @@
          FOOTER SECTION
     ================================================================== -->
     <footer class="bg-black/20 border-t border-white/10">
-        <div class="container mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
-            <div class="md:col-span-1">
-                 <a href="#home" class="flex items-center space-x-3">
-                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="12" fill="#9333ea"/>
-                        <path d="M7 9.5L9.5 14.5L12 9.5L14.5 14.5L17 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span class="text-2xl font-bold text-white">Wrotron.in</span>
-                </a>
-                <p class="mt-4 text-gray-400">Empowering small organizations to prosper through strategic consultancy and personalized support.</p>
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex justify-center space-x-8 mb-8">
+                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=CII-MSME" alt="Member of CII MSME Council" class="h-10">
+                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=FinTech+India" alt="Partnered with FinTech India" class="h-10">
+                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=ISO+27001" alt="ISO 27001 Certified" class="h-10">
             </div>
-            <div>
-                <h4 class="font-bold text-white">Services</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#services" class="text-gray-400 hover:text-purple-400">Strategic Planning</a></li>
-                    <li><a href="#services" class="text-gray-400 hover:text-purple-400">Operations Optimization</a></li>
-                    <li><a href="#services" class="text-gray-400 hover:text-purple-400">Financial Advisory</a></li>
-                    <li><a href="#services" class="text-gray-400 hover:text-purple-400">Digital Transformation</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white">Company</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="#about" class="text-gray-400 hover:text-purple-400">About Us</a></li>
-                    <li><a href="#team" class="text-gray-400 hover:text-purple-400">Our Team</a></li>
-                    <li><a href="#testimonials" class="text-gray-400 hover:text-purple-400">Testimonials</a></li>
-                    <li><a href="#contact" class="text-gray-400 hover:text-purple-400">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white">Contact Info</h4>
-                <ul class="mt-4 space-y-3 text-gray-400">
-                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg>+91 98765 43210</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25-2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>hello@wrotron.in</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>Sambalpur, Odisha, India</li>
+            <div class="text-center">
+                <ul class="flex justify-center space-x-6">
+                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Terms of Service</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Data Security</a></li>
                 </ul>
             </div>
         </div>
