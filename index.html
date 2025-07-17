@@ -419,7 +419,7 @@
         <div class="glass-card w-full max-w-lg p-8 rounded-2xl z-10 mx-4 modal-container opacity-0 scale-95">
             <div class="flex justify-between items-center">
                 <h2 class="text-2xl font-bold text-white">Schedule a Consultation</h2>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-white">&times;</button>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
             </div>
             <p class="text-gray-400 mt-2 mb-6">Fill out the form below and we'll get back to you shortly.</p>
             
@@ -454,7 +454,7 @@
     <script type="module">
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -463,29 +463,30 @@
             // FIREBASE SETUP
             // =================================================================
             let db, auth;
-            try {
-                // These variables are expected to be defined in the Canvas environment
-                const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-wrotron-app';
-                
-                if (Object.keys(firebaseConfig).length > 0) {
+            
+            // IMPORTANT: PASTE YOUR FIREBASE CONFIGURATION HERE
+            const firebaseConfig = {
+                // apiKey: "AIza...",
+                // authDomain: "your-project-id.firebaseapp.com",
+                // projectId: "your-project-id",
+                // storageBucket: "your-project-id.appspot.com",
+                // messagingSenderId: "...",
+                // appId: "1:..."
+            };
+
+            // Check if the user has provided their Firebase config
+            if (firebaseConfig && firebaseConfig.apiKey) {
+                try {
                     const app = initializeApp(firebaseConfig);
                     db = getFirestore(app);
                     auth = getAuth(app);
-
-                    // Sign in the user
-                    (async () => {
-                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                            await signInWithCustomToken(auth, __initial_auth_token);
-                        } else {
-                            await signInAnonymously(auth);
-                        }
-                    })();
-                } else {
-                    console.warn("Firebase config not found. Form submission will not be saved.");
+                    signInAnonymously(auth); // Sign in user to allow database writes
+                } catch (error) {
+                    console.error("Firebase initialization failed:", error);
+                    db = null; // Ensure db is null if init fails
                 }
-            } catch (error) {
-                console.error("Firebase initialization failed:", error);
+            } else {
+                console.warn("Firebase config not found. Form submission will not be saved. Please add your Firebase project configuration to the firebaseConfig object in the script.");
             }
 
             // =================================================================
@@ -516,9 +517,12 @@
                 setTimeout(() => {
                     contactModal.classList.add('hidden');
                     document.body.style.overflow = 'auto';
-                    // Reset form status on close
+                    // FIX: Reset form and status on close
+                    consultationForm.reset(); 
                     formStatus.innerHTML = '';
                     formStatus.className = 'mt-4 text-center';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
                 }, 300);
             };
 
@@ -535,9 +539,9 @@
             if (consultationForm) {
                 consultationForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    if (!db || !auth.currentUser) {
+                    if (!db) { // FIX: Check if db object exists
                         formStatus.textContent = "Database connection not available.";
-                        formStatus.className += ' text-red-400';
+                        formStatus.className = 'mt-4 text-center text-red-400';
                         return;
                     }
                     
@@ -557,27 +561,22 @@
                             submittedAt: serverTimestamp()
                         };
                         
-                        // Use a private collection path per user
-                        const userId = auth.currentUser.uid;
-                        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-wrotron-app';
-                        const leadsCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/consultation_requests`);
+                        // Use a simple collection name. Firestore rules will handle security.
+                        const leadsCollectionRef = collection(db, "consultation_requests");
 
                         await addDoc(leadsCollectionRef, leadData);
 
                         formStatus.textContent = 'Thank you! Your request has been submitted successfully.';
-                        formStatus.className += ' text-green-400';
-                        consultationForm.reset();
-
+                        formStatus.className = 'mt-4 text-center text-green-400';
+                        
                         setTimeout(() => {
                             closeModal();
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Submit Request';
                         }, 2500);
 
                     } catch (error) {
                         console.error("Error adding document: ", error);
                         formStatus.textContent = 'An error occurred. Please try again later.';
-                        formStatus.className += ' text-red-400';
+                        formStatus.className = 'mt-4 text-center text-red-400';
                         submitBtn.disabled = false;
                         submitBtn.textContent = 'Submit Request';
                     }
