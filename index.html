@@ -76,6 +76,16 @@
         }
 
         /* =================================================================
+           MODAL STYLES
+        ================================================================== */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-container {
+            transition: all 0.3s ease;
+        }
+
+        /* =================================================================
            SCROLL REVEAL ANIMATION
         ================================================================== */
         .reveal {
@@ -95,7 +105,7 @@
     <!-- =================================================================
          HEADER & NAVIGATION BAR
     ================================================================== -->
-    <header class="bg-black/20 backdrop-blur-lg sticky top-0 z-50 border-b border-white/10">
+    <header class="bg-black/20 backdrop-blur-lg sticky top-0 z-40 border-b border-white/10">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="flex items-center space-x-3">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +122,7 @@
                     <li><a href="#team" class="text-gray-300 hover:text-purple-400 transition-colors">Team</a></li>
                     <li><a href="#testimonials" class="text-gray-300 hover:text-purple-400 transition-colors">Testimonials</a></li>
                 </ul>
-                <a href="#contact" class="hidden lg:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
+                <a href="#contact" id="contact-nav-btn" class="open-modal-btn hidden lg:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
                     Contact Us
                 </a>
                 <button id="mobile-menu-button" class="lg:hidden text-white ml-4 focus:outline-none">
@@ -128,7 +138,7 @@
                 <li><a href="#services" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Services</a></li>
                 <li><a href="#team" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Team</a></li>
                 <li><a href="#testimonials" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Testimonials</a></li>
-                <li><a href="#contact" class="block py-2 px-3 mt-2 bg-purple-600 rounded text-center text-white">Contact Us</a></li>
+                <li><a href="#contact" class="open-modal-btn block py-2 px-3 mt-2 bg-purple-600 rounded text-center text-white">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -149,11 +159,11 @@
                     <h1 class="mt-4 text-4xl lg:text-6xl font-black text-white tracking-tighter leading-tight">Empowering <strong class="text-purple-400">Small Organizations</strong> to <strong class="text-purple-400">Prosper</strong></h1>
                     <p class="mt-6 text-lg lg:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0">Strategic consultancy services designed to help SMEs achieve sustainable growth, operational excellence, and market leadership through personalized guidance and proven methodologies.</p>
                     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#contact" class="flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
+                        <button class="open-modal-btn flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
                             <span>Get Started Today</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-                        </a>
-                        <a href="#services" class="bg-transparent border-2 border-purple-500 text-purple-300 font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 hover:bg-purple-500/20 transition-all duration-300">Explore Services</a>
+                        </button>
+                        <a href="#services" class="flex items-center justify-center bg-transparent border-2 border-purple-500 text-purple-300 font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 hover:bg-purple-500/20 transition-all duration-300">Explore Services</a>
                     </div>
                     <div class="mt-12 flex justify-center lg:justify-start space-x-8 sm:space-x-12">
                         <div class="text-center">
@@ -176,9 +186,7 @@
             </div>
         </section>
 
-        <!-- =================================================================
-             ABOUT & CORE VALUES SECTION
-        ================================================================== -->
+        <!-- Other sections remain the same -->
         <section id="about" class="py-20 bg-black/20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">About Wrotron</h2>
@@ -210,69 +218,14 @@
             </div>
         </section>
 
-        <!-- =================================================================
-             SERVICES SECTION
-        ================================================================== -->
         <section id="services" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white reveal">Our Services</h2>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Comprehensive consultancy solutions tailored to meet the unique challenges and opportunities of small and medium enterprises.</p>
                 <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    <!-- Service Card 1: Strategic Planning -->
-                    <div class="glass-card p-8 rounded-2xl reveal">
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Strategic Planning</h3>
-                                <p class="mt-2 text-gray-400">Develop comprehensive business strategies that align with your vision and market opportunities.</p>
-                                <ul class="mt-4 space-y-2">
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Market Analysis</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Competitive Intelligence</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Growth Roadmaps</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Risk Assessment</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Service Card 2: Operations Optimization -->
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;">
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Operations Optimization</h3>
-                                <p class="mt-2 text-gray-400">Streamline processes and improve efficiency to maximize productivity and reduce costs.</p>
-                                <ul class="mt-4 space-y-2">
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Process Mapping</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Workflow Optimization</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Cost Reduction</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Quality Management</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Service Card 3: Financial Advisory -->
-                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Financial Advisory</h3>
-                                <p class="mt-2 text-gray-400">Expert financial guidance to improve cash flow, profitability, and investment decisions.</p>
-                                <ul class="mt-4 space-y-2">
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Financial Planning</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Budget Management</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Investment Strategy</li>
-                                    <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Performance Metrics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Service Card 4: Digital Transformation -->
+                    <div class="glass-card p-8 rounded-2xl reveal"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Strategic Planning</h3><p class="mt-2 text-gray-400">Develop comprehensive business strategies that align with your vision and market opportunities.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Market Analysis</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Competitive Intelligence</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Growth Roadmaps</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Risk Assessment</li></ul></div></div></div>
+                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Operations Optimization</h3><p class="mt-2 text-gray-400">Streamline processes and improve efficiency to maximize productivity and reduce costs.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Process Mapping</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Workflow Optimization</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Cost Reduction</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Quality Management</li></ul></div></div></div>
+                    <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div><div><h3 class="text-xl font-bold text-white">Financial Advisory</h3><p class="mt-2 text-gray-400">Expert financial guidance to improve cash flow, profitability, and investment decisions.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Financial Planning</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Budget Management</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Investment Strategy</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Performance Metrics</li></ul></div></div></div>
                     <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 300ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div><div><h3 class="text-xl font-bold text-white">Digital Transformation</h3><p class="mt-2 text-gray-400">Modernize your business with technology solutions that drive growth and efficiency.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Technology Assessment</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Digital Strategy</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Implementation Support</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Training Programs</li></ul></div></div></div>
                     <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.757 14h8.486M12 17.75l-3.75-3.75M12 17.75l3.75-3.75" /></svg></div><div><h3 class="text-xl font-bold text-white">Market Expansion</h3><p class="mt-2 text-gray-400">Strategic guidance for entering new markets and scaling your business operations.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Market Research</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Entry Strategies</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Partnership Development</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Brand Positioning</li></ul></div></div></div>
                     <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 500ms;"><div class="flex items-start gap-4"><div class="mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><div><h3 class="text-xl font-bold text-white">Organizational Development</h3><p class="mt-2 text-gray-400">Build strong teams and organizational culture that supports sustainable growth.</p><ul class="mt-4 space-y-2"><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Team Building</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Leadership Development</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Culture Transformation</li><li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Change Management</li></ul></div></div></div>
@@ -396,10 +349,10 @@
                 <h2 class="text-3xl lg:text-4xl font-bold text-white">Ready to Transform Your <strong class="text-purple-400">Business?</strong></h2>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Join the growing number of SMEs that have achieved remarkable success with Wrotron's strategic consultancy services.</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" class="flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
+                    <button class="open-modal-btn flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
                         <span>Schedule Free Consultation</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-                    </a>
+                    </button>
                     <a href="#services" class="bg-transparent border-2 border-gray-600 text-gray-300 font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 hover:bg-gray-800/50 transition-all duration-300">Learn More</a>
                 </div>
             </div>
@@ -455,13 +408,186 @@
         </div>
     </footer>
 
+    <!-- =================================================================
+         CONTACT MODAL
+    ================================================================== -->
+    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <!-- Modal Overlay -->
+        <div id="modal-overlay" class="absolute inset-0 bg-black/60 modal-overlay"></div>
+        
+        <!-- Modal Container -->
+        <div class="glass-card w-full max-w-lg p-8 rounded-2xl z-10 mx-4 modal-container opacity-0 scale-95">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-white">Schedule a Consultation</h2>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <p class="text-gray-400 mt-2 mb-6">Fill out the form below and we'll get back to you shortly.</p>
+            
+            <!-- Contact Form -->
+            <form id="consultation-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" id="submit-form-btn" class="bg-purple-600 text-white font-bold py-3 px-8 rounded-lg transition-colors btn-glow w-full">Submit Request</button>
+                </div>
+            </form>
+            <div id="form-status" class="mt-4 text-center"></div>
+        </div>
+    </div>
+
+
     <!-- All JavaScript is now directly inside this <script> tag -->
-    <script>
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
         document.addEventListener('DOMContentLoaded', function () {
             
-            /**
-             * Mobile Menu Toggle Functionality
-             */
+            // =================================================================
+            // FIREBASE SETUP
+            // =================================================================
+            let db, auth;
+            try {
+                // These variables are expected to be defined in the Canvas environment
+                const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-wrotron-app';
+                
+                if (Object.keys(firebaseConfig).length > 0) {
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+
+                    // Sign in the user
+                    (async () => {
+                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                            await signInWithCustomToken(auth, __initial_auth_token);
+                        } else {
+                            await signInAnonymously(auth);
+                        }
+                    })();
+                } else {
+                    console.warn("Firebase config not found. Form submission will not be saved.");
+                }
+            } catch (error) {
+                console.error("Firebase initialization failed:", error);
+            }
+
+            // =================================================================
+            // MODAL LOGIC
+            // =================================================================
+            const contactModal = document.getElementById('contact-modal');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContainer = contactModal.querySelector('.modal-container');
+            const openModalButtons = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const consultationForm = document.getElementById('consultation-form');
+            const formStatus = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-form-btn');
+
+
+            const openModal = () => {
+                contactModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                setTimeout(() => {
+                    modalOverlay.classList.remove('opacity-0');
+                    modalContainer.classList.remove('opacity-0', 'scale-95');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modalOverlay.classList.add('opacity-0');
+                modalContainer.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    contactModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                    // Reset form status on close
+                    formStatus.innerHTML = '';
+                    formStatus.className = 'mt-4 text-center';
+                }, 300);
+            };
+
+            openModalButtons.forEach(btn => btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            }));
+            closeModalBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+
+            // =================================================================
+            // FORM SUBMISSION LOGIC
+            // =================================================================
+            if (consultationForm) {
+                consultationForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (!db || !auth.currentUser) {
+                        formStatus.textContent = "Database connection not available.";
+                        formStatus.className += ' text-red-400';
+                        return;
+                    }
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    formStatus.textContent = '';
+                    formStatus.className = 'mt-4 text-center';
+
+
+                    try {
+                        const formData = new FormData(consultationForm);
+                        const leadData = {
+                            name: formData.get('name'),
+                            email: formData.get('email'),
+                            phone: formData.get('phone'),
+                            message: formData.get('message'),
+                            submittedAt: serverTimestamp()
+                        };
+                        
+                        // Use a private collection path per user
+                        const userId = auth.currentUser.uid;
+                        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-wrotron-app';
+                        const leadsCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/consultation_requests`);
+
+                        await addDoc(leadsCollectionRef, leadData);
+
+                        formStatus.textContent = 'Thank you! Your request has been submitted successfully.';
+                        formStatus.className += ' text-green-400';
+                        consultationForm.reset();
+
+                        setTimeout(() => {
+                            closeModal();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Submit Request';
+                        }, 2500);
+
+                    } catch (error) {
+                        console.error("Error adding document: ", error);
+                        formStatus.textContent = 'An error occurred. Please try again later.';
+                        formStatus.className += ' text-red-400';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Request';
+                    }
+                });
+            }
+
+
+            // =================================================================
+            // MOBILE MENU LOGIC
+            // =================================================================
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -478,9 +604,9 @@
                 });
             }
 
-            /**
-             * Scroll Reveal Animation
-             */
+            // =================================================================
+            // SCROLL REVEAL ANIMATION
+            // =================================================================
             const revealElements = document.querySelectorAll('.reveal');
             
             if ('IntersectionObserver' in window) {
@@ -498,7 +624,6 @@
                     observer.observe(element);
                 });
             } else {
-                // Fallback for older browsers
                 revealElements.forEach(element => {
                     element.classList.add('visible');
                 });
