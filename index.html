@@ -29,8 +29,9 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #1e1b4b;
-            background-image: linear-gradient(145deg, #1e1b4b 0%, #4c1d95 100%);
+            background-color: #0f172a; /* slate-900 */
+            background-image: radial-gradient(at 47% 33%, hsl(215.00, 39%, 30%) 0, transparent 59%), 
+                              radial-gradient(at 82% 65%, hsl(252.00, 39%, 25%) 0, transparent 55%);
             color: #d1d5db; /* Default text color (gray-300) */
         }
 
@@ -38,7 +39,7 @@
            GLASSMORPHISM CARD STYLES
         ================================================================== */
         .glass-card {
-            background: rgba(76, 29, 149, 0.25); /* purple-900 with 25% opacity */
+            background: rgba(30, 41, 59, 0.4); /* slate-800 with 40% opacity */
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -48,14 +49,14 @@
         .glass-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-color: rgba(192, 132, 252, 0.3); /* purple-300 */
+            border-color: rgba(139, 92, 246, 0.3); /* A subtle indigo border on hover */
         }
 
         /* =================================================================
            BUTTON STYLES
         ================================================================== */
         .btn-glow:hover {
-            box-shadow: 0 0 25px 5px rgba(168, 85, 247, 0.5); /* purple-500 glow */
+            box-shadow: 0 0 25px 5px rgba(99, 102, 241, 0.5); /* indigo-500 glow */
         }
 
         /* =================================================================
@@ -65,14 +66,14 @@
             width: 10px; 
         }
         ::-webkit-scrollbar-track { 
-            background: #1e1b4b; 
+            background: #0f172a; 
         }
         ::-webkit-scrollbar-thumb { 
-            background: #9333ea; 
+            background: #4f46e5; 
             border-radius: 5px; 
         }
         ::-webkit-scrollbar-thumb:hover { 
-            background: #a855f7; 
+            background: #6366f1; 
         }
 
         /* =================================================================
@@ -109,7 +110,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #2e1065; /* purple-900 */
+            background-color: #1e293b; /* slate-800 */
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -125,7 +126,7 @@
         }
 
         .dropdown-content a:hover { 
-            background-color: #5b21b6; /* purple-700 */
+            background-color: #4338ca; /* indigo-700 */
         }
 
         .dropdown:hover .dropdown-content {
@@ -143,19 +144,19 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="flex items-center space-x-3">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="12" fill="#9333ea"/>
+                    <circle cx="12" cy="12" r="12" fill="#6366f1"/>
                     <path d="M7 9.5L9.5 14.5L12 9.5L14.5 14.5L17 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span class="text-2xl font-bold text-white">Wrotron.in</span>
             </a>
             <div class="flex items-center">
                 <ul class="hidden lg:flex items-center space-x-8">
-                    <li><a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a></li>
-                    <li><a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors">About</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-purple-400 transition-colors">Services</a></li>
-                    <li><a href="#case-studies" class="text-gray-300 hover:text-purple-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#home" class="text-gray-300 hover:text-indigo-400 transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-indigo-400 transition-colors">About</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-indigo-400 transition-colors">Services</a></li>
+                    <li><a href="#case-studies" class="text-gray-300 hover:text-indigo-400 transition-colors">Case Studies</a></li>
                 </ul>
-                <a href="#contact" class="open-modal-btn hidden lg:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
+                <a href="#contact" class="open-modal-btn hidden lg:inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 ml-8 rounded-lg transition-colors btn-glow">
                     Contact Us
                 </a>
                 <button id="mobile-menu-button" class="lg:hidden text-white ml-4 focus:outline-none">
@@ -166,11 +167,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-black/20">
             <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <li><a href="#home" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Home</a></li>
-                <li><a href="#about" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">About</a></li>
-                <li><a href="#services" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Services</a></li>
-                <li><a href="#case-studies" class="block py-2 px-3 text-white hover:bg-purple-600 rounded">Case Studies</a></li>
-                <li><a href="#contact" class="open-modal-btn block py-2 px-3 mt-2 bg-purple-600 rounded text-center text-white">Contact Us</a></li>
+                <li><a href="#home" class="block py-2 px-3 text-white hover:bg-indigo-600 rounded">Home</a></li>
+                <li><a href="#about" class="block py-2 px-3 text-white hover:bg-indigo-600 rounded">About</a></li>
+                <li><a href="#services" class="block py-2 px-3 text-white hover:bg-indigo-600 rounded">Services</a></li>
+                <li><a href="#case-studies" class="block py-2 px-3 text-white hover:bg-indigo-600 rounded">Case Studies</a></li>
+                <li><a href="#contact" class="open-modal-btn block py-2 px-3 mt-2 bg-indigo-600 rounded text-center text-white">Contact Us</a></li>
             </ul>
         </div>
     </header>
@@ -187,7 +188,7 @@
                 <h1 class="text-4xl lg:text-6xl font-black text-white tracking-tighter leading-tight">Empowering Ambition. Delivering Results.</h1>
                 <p class="mt-6 text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">Wrotron blends IIM-caliber insight with hands-on execution, delivering world-class consulting to the founders and family businesses forging their future.</p>
                 <div class="mt-10">
-                    <a href="#" class="open-modal-btn inline-block bg-purple-600 text-white font-bold py-4 px-8 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">Schedule Your Free Discovery Call</a>
+                    <a href="#" class="open-modal-btn inline-block bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">Schedule Your Free Discovery Call</a>
                 </div>
             </div>
         </section>
@@ -226,27 +227,27 @@
                 <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-2 gap-8 text-left">
                     <article class="glass-card p-8 rounded-2xl reveal">
                         <h3 class="text-2xl font-bold text-white">Cash-Flow & Working Capital Management</h3>
-                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Customized cash-flow model, 90-day burn analysis</p>
-                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 3 weeks</p>
-                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Reduce DSO by 15%</p>
+                        <p class="mt-4"><strong class="text-indigo-300">Deliverables:</strong> Customized cash-flow model, 90-day burn analysis</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Timeline:</strong> 3 weeks</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Outcome:</strong> Reduce DSO by 15%</p>
                     </article>
                     <article class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;">
                         <h3 class="text-2xl font-bold text-white">Financial Compliance & GST Advisory</h3>
-                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> End-to-end GST filing support, quarterly compliance reviews</p>
-                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> Ongoing with monthly check-ins</p>
-                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Zero compliance penalties, streamlined filings</p>
+                        <p class="mt-4"><strong class="text-indigo-300">Deliverables:</strong> End-to-end GST filing support, quarterly compliance reviews</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Timeline:</strong> Ongoing with monthly check-ins</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Outcome:</strong> Zero compliance penalties, streamlined filings</p>
                     </article>
                     <article class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
                         <h3 class="text-2xl font-bold text-white">Market Expansion Strategy</h3>
-                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Market entry report, channel partner mapping</p>
-                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 4 weeks</p>
-                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> Identify 2 new sales channels with 10% projected revenue growth</p>
+                        <p class="mt-4"><strong class="text-indigo-300">Deliverables:</strong> Market entry report, channel partner mapping</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Timeline:</strong> 4 weeks</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Outcome:</strong> Identify 2 new sales channels with 10% projected revenue growth</p>
                     </article>
-                    <article class="glass-card p-8 rounded-2xl reveal border-2 border-purple-500" style="transition-delay: 300ms;">
+                    <article class="glass-card p-8 rounded-2xl reveal border-2 border-indigo-500" style="transition-delay: 300ms;">
                         <h3 class="text-2xl font-bold text-white">Tech Enablement (Add-On)</h3>
-                        <p class="mt-4"><strong class="text-purple-300">Deliverables:</strong> Digital diagnostics, software integration plan</p>
-                        <p class="mt-2"><strong class="text-purple-300">Timeline:</strong> 6 weeks</p>
-                        <p class="mt-2"><strong class="text-purple-300">Outcome:</strong> 25% improvement in operational efficiency</p>
+                        <p class="mt-4"><strong class="text-indigo-300">Deliverables:</strong> Digital diagnostics, software integration plan</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Timeline:</strong> 6 weeks</p>
+                        <p class="mt-2"><strong class="text-indigo-300">Outcome:</strong> 25% improvement in operational efficiency</p>
                     </article>
                 </div>
             </div>
@@ -261,7 +262,7 @@
                 <div class="mt-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="glass-card p-8 rounded-2xl reveal">
                         <h4 class="text-2xl font-bold text-white">ABC Textiles</h4>
-                        <p class="text-purple-300 font-semibold mt-1"><em>Textile Manufacturing, Gujarat</em></p>
+                        <p class="text-indigo-300 font-semibold mt-1"><em>Textile Manufacturing, Gujarat</em></p>
                         <ul class="mt-4 space-y-3 text-left">
                             <li><strong>Challenge:</strong> High DSO (90 days) & erratic cash flow</li>
                             <li><strong>Solution:</strong> New invoicing protocol + tailored cash-flow model</li>
@@ -275,9 +276,9 @@
                         </ul>
                     </div>
                     <div class="reveal" style="transition-delay: 200ms;">
-                        <blockquote class="bg-purple-900/30 border-l-4 border-purple-500 p-6 rounded-lg">
+                        <blockquote class="bg-indigo-900/30 border-l-4 border-indigo-500 p-6 rounded-lg">
                            <p class="text-xl italic">“Wrotron’s cash-flow overhaul transformed our working capital – within 3 months we freed up ₹30 Lakh and cut DSO by 25 days.”</p>
-                           <cite class="block text-right mt-4 not-italic font-semibold text-purple-300">— Priya Sharma, CFO, ABC Textiles</cite>
+                           <cite class="block text-right mt-4 not-italic font-semibold text-indigo-300">— Priya Sharma, CFO, ABC Textiles</cite>
                         </blockquote>
                     </div>
                 </div>
@@ -293,11 +294,11 @@
                 <div class="mt-12 grid sm:grid-cols-1 lg:grid-cols-1 gap-8 max-w-lg mx-auto">
                     <!-- Team Card 1 -->
                     <div class="glass-card p-8 rounded-2xl reveal text-center">
-                        <img src="https://placehold.co/100x100/a855f7/ffffff?text=RG" alt="Rohit Kumar Gorai" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-400">
+                        <img src="https://placehold.co/100x100/6366f1/ffffff?text=RG" alt="Rohit Kumar Gorai" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-indigo-400">
                         <h5 class="text-2xl font-bold text-white">Rohit Kumar Gorai</h5>
-                        <p class="text-purple-400 font-semibold">Founder & Lead Consultant</p>
+                        <p class="text-indigo-400 font-semibold">Founder & Lead Consultant</p>
                         <p class="text-gray-400 mt-2">MBA, IIM Sambalpur | ex-GCP Developer at Persistent Systems. Expert in financial modeling & MSME growth.</p>
-                        <a href="https://www.linkedin.com/in/rohit-gorai-iim/" target="_blank" class="inline-block mt-4 text-purple-300 hover:text-white transition-colors">View LinkedIn</a>
+                        <a href="https://linkedin.com/in/rohitgorai" target="_blank" class="inline-block mt-4 text-indigo-300 hover:text-white transition-colors">View LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -312,9 +313,9 @@
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto reveal">Practical guides, policy updates, and growth hacks—fresh every fortnight.</p>
                 <div class="mt-12 max-w-2xl mx-auto text-left">
                     <ul class="space-y-4">
-                        <li class="glass-card p-6 rounded-lg reveal"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">How to Improve Your Cash Cycle in 5 Steps</a></li>
-                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 100ms;"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">Claiming MSME Subsidies: A Step-by-Step Guide</a></li>
-                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 200ms;"><a href="#" class="text-xl text-white hover:text-purple-300 transition-colors">5 Data-Driven Strategies to Boost EBITDA</a></li>
+                        <li class="glass-card p-6 rounded-lg reveal"><a href="#" class="text-xl text-white hover:text-indigo-300 transition-colors">How to Improve Your Cash Cycle in 5 Steps</a></li>
+                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 100ms;"><a href="#" class="text-xl text-white hover:text-indigo-300 transition-colors">Claiming MSME Subsidies: A Step-by-Step Guide</a></li>
+                        <li class="glass-card p-6 rounded-lg reveal" style="transition-delay: 200ms;"><a href="#" class="text-xl text-white hover:text-indigo-300 transition-colors">5 Data-Driven Strategies to Boost EBITDA</a></li>
                     </ul>
                 </div>
             </div>
@@ -328,7 +329,7 @@
                 <h2 class="text-3xl lg:text-4xl font-bold text-white">Ready for a Free 30-Min Financial Health Check?</h2>
                 <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Book a no-obligation session to uncover hidden growth opportunities.</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="open-modal-btn flex items-center justify-center gap-2 bg-purple-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
+                    <button class="open-modal-btn flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300 btn-glow">
                         <span>Schedule Free Consultation</span>
                     </button>
                     <a href="https://wa.me/919876543210" target="_blank" class="flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-3 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300">
@@ -345,15 +346,15 @@
     <footer class="bg-black/20 border-t border-white/10">
         <div class="container mx-auto px-6 py-12">
             <div class="flex justify-center space-x-8 mb-8">
-                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=CII-MSME" alt="Member of CII MSME Council" class="h-10">
-                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=FinTech+India" alt="Partnered with FinTech India" class="h-10">
-                <img src="https://placehold.co/100x50/ffffff/1e1b4b?text=ISO+27001" alt="ISO 27001 Certified" class="h-10">
+                <img src="https://placehold.co/100x50/ffffff/0f172a?text=CII-MSME" alt="Member of CII MSME Council" class="h-10">
+                <img src="https://placehold.co/100x50/ffffff/0f172a?text=FinTech+India" alt="Partnered with FinTech India" class="h-10">
+                <img src="https://placehold.co/100x50/ffffff/0f172a?text=ISO+27001" alt="ISO 27001 Certified" class="h-10">
             </div>
             <div class="text-center">
                 <ul class="flex justify-center space-x-6">
-                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Privacy Policy</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Terms of Service</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-purple-400">Data Security</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-indigo-400">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-indigo-400">Terms of Service</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-indigo-400">Data Security</a></li>
                 </ul>
             </div>
         </div>
@@ -383,22 +384,22 @@
             <form id="consultation-form">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                    <input type="text" id="name" name="name" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                    <input type="text" id="name" name="name" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                    <input type="email" id="email" name="email" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                    <input type="email" id="email" name="email" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number (Optional)</label>
-                    <input type="tel" id="phone" name="phone" class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                    <input type="tel" id="phone" name="phone" class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
                 <div class="mb-6">
                     <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"></textarea>
+                    <textarea id="message" name="message" rows="4" required class="w-full bg-gray-700/50 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                 </div>
                 <div class="text-right">
-                    <button type="submit" id="submit-form-btn" class="bg-purple-600 text-white font-bold py-3 px-8 rounded-lg transition-colors btn-glow w-full">Submit Request</button>
+                    <button type="submit" id="submit-form-btn" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg transition-colors btn-glow w-full">Submit Request</button>
                 </div>
             </form>
             <div id="form-status" class="mt-4 text-center"></div>
