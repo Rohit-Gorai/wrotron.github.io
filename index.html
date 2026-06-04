@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wrotron – Smart Vending Solutions for Offices, Hospitals & Campuses India</title>
-<meta name="description" content="Wrotron installs and operates smart cashless vending machines across India — snacks, beverages & electronics. Zero cost to you, 99% uptime, fully managed.">
-<meta name="keywords" content="Vending Machine India, B2B Vending, Smart Vending, Office Vending, Cashless Vending, Snack Machine, Beverage Machine, Electronics Vending">
+<title>Wrotron – India's Smart Vending Revolution. Be Part of It.</title>
+<meta name="description" content="An IIM founder is disrupting vending in India. Wrotron installs smart cashless vending machines at your premises — snacks, beverages & electronics. Zero cost. Fully managed.">
+<meta name="keywords" content="Vending Machine India, B2B Vending, Smart Vending, Office Vending, Cashless Vending, IIM Startup India">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,30 +13,18 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;
-  --bg2:#f5f7fa;
-  --bg3:#eef1f6;
-  --dark:#0b1120;
-  --dark2:#1a2340;
-  --mid:#4a5568;
-  --muted:#8a97ab;
-  --border:#e2e8f0;
-  --orange:#f97316;
-  --orange2:#ea580c;
-  --blue:#0ea5e9;
-  --green:#10b981;
-  --card:#ffffff;
-  --fh:'Outfit',sans-serif;
-  --fb:'Plus Jakarta Sans',sans-serif;
-  --r:14px;
+  --bg:#ffffff;--bg2:#f5f7fa;--bg3:#eef1f6;
+  --dark:#0b1120;--dark2:#1a2340;
+  --mid:#4a5568;--muted:#8a97ab;--border:#e2e8f0;
+  --orange:#f97316;--orange2:#ea580c;
+  --cyan:#00e5ff;--blue:#0ea5e9;--green:#10b981;
+  --fh:'Outfit',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;--r:14px;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--bg);color:var(--dark);overflow-x:hidden;line-height:1.6}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:#f1f5f9}
-::-webkit-scrollbar-thumb{background:var(--orange);border-radius:3px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:var(--orange);border-radius:3px}
 
-/* ─── NAV ─── */
+/* NAV */
 header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(0,0,0,0.06)}
 nav{max-width:1200px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
@@ -51,188 +39,211 @@ nav ul a:hover{color:var(--orange)}
 .btn-orange:hover{background:var(--orange2);box-shadow:0 6px 20px rgba(249,115,22,0.35);transform:translateY(-1px)}
 .btn-dark{background:var(--dark);color:#fff}
 .btn-dark:hover{background:var(--dark2);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--dark);border:1.5px solid var(--border)}
-.btn-outline:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-1px)}
-.btn-white{background:#fff;color:var(--dark);border:1.5px solid rgba(255,255,255,0.3)}
-.btn-white:hover{background:rgba(255,255,255,0.9);transform:translateY(-1px)}
+.btn-outline-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.35)}
+.btn-outline-w:hover{background:rgba(255,255,255,0.08);transform:translateY(-1px)}
 #hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 #hamburger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px}
 #mobile-nav{display:none;background:#fff;border-bottom:1px solid var(--border);padding:1rem 2rem 1.5rem}
 #mobile-nav.open{display:block}
 #mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:0.9rem}
 #mobile-nav ul a{text-decoration:none;color:var(--mid);font-size:0.95rem;font-weight:500}
-
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 section{position:relative}
 
-/* ─── HERO ─── */
-#hero{background:var(--dark);min-height:92vh;display:flex;align-items:center;padding:5rem 0;overflow:hidden;position:relative}
-#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 50%,rgba(249,115,22,0.12) 0%,transparent 70%)}
-#hero::after{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1200&q=80&fit=crop') center/cover;opacity:0.18}
-.hero-content{position:relative;z-index:2;max-width:640px}
+/* HERO */
+#hero{background:var(--dark);min-height:95vh;display:flex;align-items:center;padding:5rem 0;overflow:hidden;position:relative}
+.hero-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1601598851547-4302969d0614?w=1600&q=80&fit=crop') center/cover;opacity:0.12}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(11,17,32,0.98) 45%,rgba(11,17,32,0.6) 100%)}
+.hero-content{position:relative;z-index:2;max-width:660px}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);border-radius:999px;padding:0.3rem 0.9rem;font-size:0.75rem;font-weight:600;color:#fb923c;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:1.8rem}
-.hero-pill-dot{width:6px;height:6px;background:#fb923c;border-radius:50%;animation:pop 2s infinite}
-@keyframes pop{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
-h1{font-family:var(--fh);font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:1.5rem}
-h1 em{font-style:normal;color:var(--orange)}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:2.5rem;font-weight:300;max-width:520px}
+.pill-dot{width:6px;height:6px;background:#fb923c;border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+h1{font-family:var(--fh);font-size:clamp(2.4rem,5.5vw,4.4rem);font-weight:900;color:#fff;line-height:1.04;letter-spacing:-2px;margin-bottom:1.6rem}
+h1 .o{color:var(--orange)} h1 .c{color:var(--cyan)}
+.hero-story{font-size:1.1rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2.5rem;font-weight:300;max-width:540px;border-left:3px solid var(--orange);padding-left:1.2rem}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
-.hero-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:2.5rem;max-width:560px}
-.hnum-val{font-family:var(--fh);font-size:1.9rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
-.hnum-val span{color:var(--orange)}
-.hnum-label{font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px}
+.hero-nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.08);padding-top:2.5rem;max-width:560px}
+.hn-val{font-family:var(--fh);font-size:1.9rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px}
+.hn-val span{color:var(--orange)}
+.hn-lbl{font-size:0.68rem;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px}
 
-/* ─── MARQUEE ─── */
-#marquee{background:var(--orange);padding:0.9rem 0;overflow:hidden}
-.marquee-track{display:flex;gap:3rem;animation:scroll 20s linear infinite;white-space:nowrap}
-.marquee-track span{font-family:var(--fh);font-size:0.8rem;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;flex-shrink:0}
-.marquee-sep{color:rgba(255,255,255,0.4)}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* MARQUEE */
+#marquee{background:var(--orange);padding:0.85rem 0;overflow:hidden}
+.mtrack{display:flex;gap:3rem;animation:mscroll 22s linear infinite;white-space:nowrap}
+.mtrack span{font-family:var(--fh);font-size:0.78rem;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;flex-shrink:0}
+.msep{color:rgba(255,255,255,0.4)}
+@keyframes mscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ─── SECTION HEADS ─── */
-.sec-label{display:inline-block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--orange);margin-bottom:0.8rem}
-h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--dark);letter-spacing:-1px;line-height:1.15;margin-bottom:0.8rem}
-h2.light{color:#fff}
+/* SECTION HEADS */
+.sec-tag{display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--orange);margin-bottom:0.75rem}
+h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--dark);letter-spacing:-1px;line-height:1.15;margin-bottom:0.85rem}
+h2.lgt{color:#fff}
 .sdesc{font-size:0.97rem;color:var(--muted);max-width:540px;font-weight:300;line-height:1.7}
-.sdesc.light{color:rgba(255,255,255,0.55)}
-.sec-head{text-align:center;margin-bottom:4rem}
-.sec-head .sdesc{margin:0 auto}
+.sdesc.lgt{color:rgba(255,255,255,0.5)}
+.sh{text-align:center;margin-bottom:4rem}
+.sh .sdesc{margin:0 auto}
 
-/* ─── CARDS ─── */
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);transition:all 0.25s}
-.card:hover{border-color:rgba(249,115,22,0.25);box-shadow:0 16px 40px rgba(0,0,0,0.08);transform:translateY(-3px)}
+/* STORY STRIP */
+#story{padding:6rem 0;background:var(--bg2)}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-img-wrap{position:relative}
+.story-img{width:100%;border-radius:20px;aspect-ratio:4/3;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,0.14)}
+.story-badge{position:absolute;top:-18px;left:-18px;background:var(--orange);color:#fff;border-radius:14px;padding:1rem 1.3rem;box-shadow:0 12px 28px rgba(249,115,22,0.4);text-align:center}
+.story-badge-val{font-family:var(--fh);font-size:1.5rem;font-weight:900;line-height:1}
+.story-badge-lbl{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:0.85;margin-top:2px}
+.story-text h2{margin-bottom:1.2rem}
+.story-text p{font-size:0.97rem;color:var(--mid);line-height:1.85;margin-bottom:1rem}
+.story-cta{display:flex;align-items:center;gap:1rem;margin-top:1.8rem;flex-wrap:wrap}
+.story-cta-note{font-size:0.82rem;color:var(--muted);font-style:italic}
 
-/* ─── HOW IT WORKS ─── */
-#how-it-works{padding:7rem 0;background:var(--bg)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.step{padding:2rem 1.5rem;text-align:center}
+/* STEPS */
+#how{padding:7rem 0;background:var(--bg)}
+.steps-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.step{padding:2rem 1.5rem;text-align:center;background:#fff;border:1px solid var(--border);border-radius:var(--r);transition:all 0.25s}
+.step:hover{border-color:rgba(249,115,22,0.25);box-shadow:0 16px 40px rgba(0,0,0,0.07);transform:translateY(-3px)}
 .step-n{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--orange),#dc2626);color:#fff;font-family:var(--fh);font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.4rem;box-shadow:0 6px 18px rgba(249,115,22,0.3)}
 .step h3{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:0.5rem}
 .step p{font-size:0.875rem;color:var(--muted);line-height:1.65}
 
-/* ─── SOLUTIONS (image+text) ─── */
+/* SOLUTIONS */
 #solutions{padding:7rem 0;background:var(--bg2)}
-.sol-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem}
-.sol-item:last-child{margin-bottom:0}
-.sol-item.flip{direction:rtl}
-.sol-item.flip>*{direction:ltr}
-.sol-img{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.12);aspect-ratio:4/3}
-.sol-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.sol{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem}
+.sol:last-child{margin-bottom:0}
+.sol.rev{direction:rtl}.sol.rev>*{direction:ltr}
+.sol-img{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.13);aspect-ratio:4/3}
+.sol-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.55s ease}
 .sol-img:hover img{transform:scale(1.04)}
-.sol-text{}
-.sol-text .sec-label{margin-bottom:0.6rem}
-.sol-text h2{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1rem}
-.sol-text p{font-size:0.95rem;color:var(--mid);line-height:1.8;margin-bottom:1.5rem}
-.check-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem}
-.check-list li{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.9rem;color:var(--mid)}
-.check-list li::before{content:'';flex-shrink:0;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#dc2626);display:flex;align-items:center;justify-content:center;margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-color:var(--orange)}
+.sol-text .sec-tag{margin-bottom:0.5rem}
+.sol-text h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:1rem}
+.sol-text p{font-size:0.95rem;color:var(--mid);line-height:1.85;margin-bottom:1.4rem}
+.cklist{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:2rem}
+.cklist li{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.9rem;color:var(--mid)}
+.ck{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--orange);margin-top:2px;display:flex;align-items:center;justify-content:center}
+.ck svg{width:10px;height:10px;stroke:#fff;stroke-width:3;fill:none}
 
-/* ─── SECTORS ─── */
-#sectors{padding:7rem 0;background:var(--dark);position:relative;overflow:hidden}
-#sectors::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(249,115,22,0.05);pointer-events:none}
-.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.sector-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);padding:2rem;transition:all 0.25s;cursor:default;position:relative;overflow:hidden}
-.sector-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--orange),transparent);opacity:0;transition:opacity 0.3s}
-.sector-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(249,115,22,0.2);transform:translateY(-3px)}
-.sector-card:hover::before{opacity:1}
-.sector-img{width:100%;height:160px;border-radius:10px;object-fit:cover;margin-bottom:1.2rem;opacity:0.85;transition:opacity 0.3s}
-.sector-card:hover .sector-img{opacity:1}
-.sector-card h3{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.4rem}
-.sector-card p{font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.6}
+/* SECTORS */
+#sectors{padding:7rem 0;background:var(--dark);overflow:hidden;position:relative}
+#sectors::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:rgba(249,115,22,0.04);border-radius:50%;pointer-events:none}
+.sec-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.sec-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);overflow:hidden;transition:all 0.25s;position:relative}
+.sec-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--orange),transparent);opacity:0;transition:opacity 0.3s}
+.sec-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(249,115,22,0.2);transform:translateY(-4px)}
+.sec-card:hover::after{opacity:1}
+.sec-card-img{width:100%;height:170px;object-fit:cover;opacity:0.8;transition:opacity 0.3s}
+.sec-card:hover .sec-card-img{opacity:1}
+.sec-card-body{padding:1.4rem}
+.sec-card h3{font-family:var(--fh);font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem}
+.sec-card p{font-size:0.83rem;color:rgba(255,255,255,0.42);line-height:1.6}
 
-/* ─── FEATURES ─── */
+/* FEATURES */
 #features{padding:7rem 0;background:var(--bg)}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.feat-card{padding:2rem;border-radius:var(--r);background:var(--bg2);border:1px solid var(--border);transition:all 0.25s}
-.feat-card:hover{background:#fff;box-shadow:0 16px 40px rgba(0,0,0,0.07);transform:translateY(-3px);border-color:rgba(249,115,22,0.2)}
-.feat-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(220,38,38,0.08));border:1px solid rgba(249,115,22,0.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
-.feat-card h3{font-family:var(--fh);font-size:0.98rem;font-weight:700;color:var(--dark);margin-bottom:0.4rem}
-.feat-card p{font-size:0.85rem;color:var(--muted);line-height:1.65}
+.feat-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.fc{padding:2rem;border-radius:var(--r);background:var(--bg2);border:1px solid var(--border);transition:all 0.25s}
+.fc:hover{background:#fff;box-shadow:0 16px 40px rgba(0,0,0,0.07);transform:translateY(-3px);border-color:rgba(249,115,22,0.2)}
+.fc-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(220,38,38,0.08));border:1px solid rgba(249,115,22,0.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
+.fc h3{font-family:var(--fh);font-size:0.97rem;font-weight:700;color:var(--dark);margin-bottom:0.4rem}
+.fc p{font-size:0.85rem;color:var(--muted);line-height:1.65}
 
-/* ─── BRANDS ─── */
-#brands{padding:5rem 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.brands-label{text-align:center;font-size:0.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:2.5rem;font-weight:600}
-.brands-row{display:flex;justify-content:center;align-items:center;gap:2.5rem;flex-wrap:wrap}
-.brand-pill{background:#fff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 1.4rem;font-family:var(--fh);font-size:0.82rem;font-weight:700;color:var(--muted);letter-spacing:1px;transition:all 0.2s}
-.brand-pill:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 4px 14px rgba(249,115,22,0.1)}
+/* BRANDS */
+#brands{padding:4.5rem 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.bl{text-align:center;font-size:0.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:2.2rem;font-weight:600}
+.br{display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap}
+.bp{background:#fff;border:1px solid var(--border);border-radius:10px;padding:0.55rem 1.3rem;font-family:var(--fh);font-size:0.8rem;font-weight:700;color:var(--muted);letter-spacing:1px;transition:all 0.2s}
+.bp:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 4px 14px rgba(249,115,22,0.1)}
 
-/* ─── ABOUT ─── */
+/* JOIN JOURNEY */
+#journey{padding:7rem 0;background:var(--dark);position:relative;overflow:hidden}
+#journey::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&fit=crop') center/cover;opacity:0.07}
+.journey-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.journey-text h2{color:#fff;font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:1.2rem}
+.journey-text .sdesc{color:rgba(255,255,255,0.5);max-width:480px;margin-bottom:0}
+.journey-perks{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
+.perk{display:flex;align-items:flex-start;gap:1rem}
+.perk-icon{flex-shrink:0;width:40px;height:40px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.perk h4{font-family:var(--fh);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.2rem}
+.perk p{font-size:0.83rem;color:rgba(255,255,255,0.45);line-height:1.6}
+.journey-cta-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:2.5rem;text-align:center}
+.journey-cta-box h3{font-family:var(--fh);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:0.8rem}
+.journey-cta-box p{font-size:0.9rem;color:rgba(255,255,255,0.45);margin-bottom:1.8rem;line-height:1.7}
+.journey-cta-box .btn-orange{font-size:1rem;padding:0.85rem 2rem;width:100%;justify-content:center}
+.journey-note{font-size:0.78rem;color:rgba(255,255,255,0.28);margin-top:1rem}
+
+/* ABOUT */
 #about{padding:7rem 0;background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .about-img-wrap{position:relative}
 .about-img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,0.12)}
-.about-badge{position:absolute;bottom:-20px;right:-20px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;box-shadow:0 12px 32px rgba(0,0,0,0.1);text-align:center}
-.about-badge-val{font-family:var(--fh);font-size:1.6rem;font-weight:900;color:var(--orange);line-height:1}
-.about-badge-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px}
+.about-bdg{position:absolute;bottom:-20px;right:-20px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;box-shadow:0 12px 32px rgba(0,0,0,0.1);text-align:center}
+.about-bdg-v{font-family:var(--fh);font-size:1.5rem;font-weight:900;color:var(--orange);line-height:1}
+.about-bdg-l{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px}
 .about-text h2{margin-bottom:1rem}
-.about-text p{font-size:0.95rem;color:var(--mid);line-height:1.8;margin-bottom:1rem}
-.founder-row{display:flex;align-items:center;gap:1rem;margin-top:1.8rem;padding:1.2rem;background:var(--bg2);border-radius:12px;border:1px solid var(--border)}
-.founder-ava{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#dc2626);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
-.founder-name{font-family:var(--fh);font-size:0.95rem;font-weight:700;color:var(--dark)}
-.founder-role{font-size:0.78rem;color:var(--muted);margin-top:1px}
-.founder-tags{display:flex;gap:0.4rem;margin-top:0.5rem;flex-wrap:wrap}
-.ftag{font-size:0.68rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:999px;background:rgba(249,115,22,0.08);color:var(--orange);border:1px solid rgba(249,115,22,0.15)}
-.linkedin-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.78rem;font-weight:600;color:#0077b5;margin-top:0.5rem;transition:opacity 0.2s}
-.linkedin-link:hover{opacity:0.7}
+.about-text p{font-size:0.96rem;color:var(--mid);line-height:1.85;margin-bottom:1rem}
+.founder-card{display:flex;align-items:flex-start;gap:1rem;margin-top:1.8rem;padding:1.3rem;background:var(--bg2);border-radius:12px;border:1px solid var(--border)}
+.f-ava{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#dc2626);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
+.f-name{font-family:var(--fh);font-size:0.95rem;font-weight:700;color:var(--dark)}
+.f-role{font-size:0.78rem;color:var(--muted);margin-top:1px}
+.f-tags{display:flex;gap:0.4rem;margin-top:0.5rem;flex-wrap:wrap}
+.ft{font-size:0.67rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:999px;background:rgba(249,115,22,0.08);color:var(--orange);border:1px solid rgba(249,115,22,0.15)}
+.li-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-size:0.78rem;font-weight:600;color:#0077b5;margin-top:0.55rem;transition:opacity 0.2s}
+.li-link:hover{opacity:0.7}
 
-/* ─── FAQ ─── */
+/* FAQ */
 #faq{padding:7rem 0;background:var(--bg2)}
-.faq-wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:0.7rem}
+.fq-wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:0.7rem}
 .fi{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .fi-q{width:100%;background:none;border:none;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:1rem}
-.fi-q span{font-family:var(--fh);font-size:0.97rem;font-weight:700;color:var(--dark)}
-.fi-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:1.1rem;font-weight:300;transition:transform 0.3s;line-height:1}
-.fi.open .fi-icon{transform:rotate(45deg);background:var(--orange);color:#fff;border-color:var(--orange)}
+.fi-q span{font-family:var(--fh);font-size:0.96rem;font-weight:700;color:var(--dark)}
+.fi-ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:1.1rem;transition:transform 0.3s;line-height:1}
+.fi.open .fi-ic{transform:rotate(45deg);background:var(--orange);color:#fff;border-color:var(--orange)}
 .fi-a{display:none;padding:0 1.5rem 1.2rem;font-size:0.88rem;color:var(--mid);line-height:1.75}
 .fi.open .fi-a{display:block}
 .fi.open{border-color:rgba(249,115,22,0.25)}
 
-/* ─── CTA ─── */
+/* CTA FINAL */
 #cta{padding:7rem 0;background:var(--dark);position:relative;overflow:hidden}
 #cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 100%,rgba(249,115,22,0.1) 0%,transparent 60%)}
-.cta-inner{text-align:center;position:relative;z-index:1;max-width:680px;margin:0 auto}
-.cta-inner h2{color:#fff;font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem}
-.cta-inner p{color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2.5rem;font-weight:300}
+.cta-in{text-align:center;position:relative;z-index:1;max-width:700px;margin:0 auto}
+.cta-in h2{color:#fff;font-size:clamp(1.9rem,4vw,3.2rem);margin-bottom:1rem;letter-spacing:-1.5px}
+.cta-in p{color:rgba(255,255,255,0.48);font-size:1rem;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.contact-row{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-.ci{font-size:0.85rem;color:rgba(255,255,255,0.4)}
-.ci a{color:rgba(255,255,255,0.7);text-decoration:none;font-weight:500;transition:color 0.2s}
+.cta-strip{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.ci{font-size:0.85rem;color:rgba(255,255,255,0.38)}
+.ci a{color:rgba(255,255,255,0.68);text-decoration:none;font-weight:500;transition:color 0.2s}
 .ci a:hover{color:var(--orange)}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,255,255,0.05)}
-.footer-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.fb-logo{margin-bottom:1rem}
-.fb-desc{font-size:0.85rem;color:rgba(255,255,255,0.35);line-height:1.7;max-width:260px;margin-bottom:1.2rem}
-.fb-contact a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.4rem;transition:color 0.2s}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.fb-desc{font-size:0.84rem;color:rgba(255,255,255,0.3);line-height:1.7;max-width:260px;margin:0.8rem 0 1.2rem}
+.fb-contact a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.38);text-decoration:none;margin-bottom:0.4rem;transition:color 0.2s}
 .fb-contact a:hover{color:var(--orange)}
-.fc-title{font-family:var(--fh);font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
-.fc-links{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
-.fc-links a{font-size:0.85rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
-.fc-links a:hover{color:var(--orange)}
-.footer-bot{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.25)}
-.footer-legal{display:flex;gap:1.5rem}
-.footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s}
-.footer-legal a:hover{color:var(--orange)}
+.fc-t{font-family:var(--fh);font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.fc-l{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.fc-l a{font-size:0.84rem;color:rgba(255,255,255,0.33);text-decoration:none;transition:color 0.2s}
+.fc-l a:hover{color:var(--orange)}
+.fbot{border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:0.78rem;color:rgba(255,255,255,0.22)}
+.fleg{display:flex;gap:1.5rem}
+.fleg a{font-size:0.78rem;color:rgba(255,255,255,0.22);text-decoration:none;transition:color 0.2s}
+.fleg a:hover{color:var(--orange)}
 
-/* ─── WA ─── */
+/* WA */
 .wa-fab{position:fixed;bottom:24px;right:24px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.45);z-index:99;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
 .wa-fab:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,0.55)}
 .wa-fab svg{width:26px;height:26px;fill:#fff}
 
-/* ─── MODAL ─── */
-.modal-bg{position:fixed;inset:0;background:rgba(7,9,26,0.8);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.3s}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(7,9,26,0.82);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .modal-bg.open{opacity:1;pointer-events:all}
 .modal-box{background:#fff;border-radius:18px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:2.5rem;transform:scale(0.95);transition:transform 0.3s;box-shadow:0 30px 80px rgba(0,0,0,0.3)}
 .modal-bg.open .modal-box{transform:scale(1)}
-.modal-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.3rem}
-.modal-hd h3{font-family:var(--fh);font-size:1.35rem;font-weight:800;color:var(--dark)}
-.modal-x{background:none;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;line-height:1;padding:0;transition:color 0.2s}
-.modal-x:hover{color:var(--dark)}
-.modal-sub{font-size:0.84rem;color:var(--muted);margin-bottom:1.6rem}
+.mhd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.3rem}
+.mhd h3{font-family:var(--fh);font-size:1.35rem;font-weight:800;color:var(--dark)}
+.mx{background:none;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;line-height:1;padding:0;transition:color 0.2s}
+.mx:hover{color:var(--dark)}
+.msub{font-size:0.84rem;color:var(--muted);margin-bottom:1.6rem}
 .ff{margin-bottom:1rem}
-.ff label{display:block;font-size:0.74rem;font-weight:700;color:var(--dark);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px}
+.ff label{display:block;font-size:0.73rem;font-weight:700;color:var(--dark);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px}
 .ff input,.ff textarea,.ff select{width:100%;background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:0.62rem 0.9rem;color:var(--dark);font-family:var(--fb);font-size:0.88rem;outline:none;transition:border-color 0.2s;appearance:none}
 .ff input:focus,.ff textarea:focus,.ff select:focus{border-color:var(--orange);background:#fff}
 .ff textarea{resize:vertical;min-height:80px}
@@ -240,35 +251,35 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 .ff-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 #form-status{text-align:center;font-size:0.85rem;margin-top:0.8rem}
 
-/* ─── REVEAL ─── */
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media(max-width:960px){
   nav ul{display:none}
   #hamburger{display:flex}
   .hero-content{max-width:100%}
   .hero-nums{grid-template-columns:repeat(2,1fr);gap:1.5rem}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .sol-item{grid-template-columns:1fr}
-  .sol-item.flip{direction:ltr}
-  .sectors-grid{grid-template-columns:repeat(2,1fr)}
-  .feat-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr}
-  .about-badge{bottom:-10px;right:10px}
-  .footer-g{grid-template-columns:1fr 1fr}
+  .steps-g{grid-template-columns:repeat(2,1fr)}
+  .sol{grid-template-columns:1fr}.sol.rev{direction:ltr}
+  .sec-g{grid-template-columns:repeat(2,1fr)}
+  .feat-g{grid-template-columns:repeat(2,1fr)}
+  .story-inner,.journey-inner,.about-g{grid-template-columns:1fr}
+  .about-bdg{bottom:-10px;right:10px}
+  .fg{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
   #hero{padding:4rem 0}
-  .steps{grid-template-columns:1fr}
-  .sectors-grid{grid-template-columns:1fr}
-  .feat-grid{grid-template-columns:1fr}
+  .steps-g{grid-template-columns:1fr}
+  .sec-g{grid-template-columns:1fr}
+  .feat-g{grid-template-columns:1fr}
   .ff-row{grid-template-columns:1fr}
-  .footer-g{grid-template-columns:1fr}
-  .footer-bot{flex-direction:column;text-align:center}
-  .contact-row{flex-direction:column;align-items:center;gap:0.8rem}
+  .fg{grid-template-columns:1fr}
+  .fbot{flex-direction:column;text-align:center}
+  .cta-strip{flex-direction:column;align-items:center;gap:0.8rem}
   h1{letter-spacing:-1px}
+  .journey-cta-box{padding:1.8rem 1.2rem}
 }
 </style>
 </head>
@@ -288,10 +299,10 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
       <span class="logo-name">Wrotron<span>.in</span></span>
     </a>
     <ul>
+      <li><a href="#story">Our Story</a></li>
       <li><a href="#solutions">Solutions</a></li>
       <li><a href="#sectors">Industries</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Join Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#" class="btn btn-orange open-modal" style="padding:0.5rem 1.2rem">Get a Quote</a></li>
     </ul>
@@ -299,10 +310,10 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
   </nav>
   <div id="mobile-nav">
     <ul>
+      <li><a href="#story">Our Story</a></li>
       <li><a href="#solutions">Solutions</a></li>
       <li><a href="#sectors">Industries</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Join Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#" class="open-modal" style="color:var(--orange);font-weight:700">Get a Quote →</a></li>
     </ul>
@@ -311,20 +322,24 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content reveal">
-      <div class="hero-pill"><div class="hero-pill-dot"></div>Smart Vending · Now Across India</div>
-      <h1>Convenience <em>Delivered</em><br>to Your Workplace,<br>24 Hours a Day.</h1>
-      <p class="hero-sub">Wrotron installs and operates fully managed, cashless smart vending machines at offices, hospitals, campuses and factories — snacks, beverages & electronics. Zero cost to you.</p>
+      <div class="hero-pill"><div class="pill-dot"></div>An IIM Startup · Disrupting Vending in India</div>
+      <h1>India Deserves<br><span class="o">Smarter</span> Vending.<br>We're <span class="c">Building</span> It.</h1>
+      <p class="hero-story">
+        A second-year IIM student walked into a factory, saw workers queuing for chai, and thought — <em style="color:rgba(255,255,255,0.85);font-style:normal">why is this still broken in 2024?</em> That question became Wrotron. We're on a mission to put smart, cashless vending machines in every office, hospital and campus in India — and we need forward-thinking organisations like yours to be part of the journey.
+      </p>
       <div class="hero-btns">
-        <a href="#" class="btn btn-orange open-modal">Request a Free Survey</a>
-        <a href="#solutions" class="btn btn-white">See Our Solutions</a>
+        <a href="#" class="btn btn-orange open-modal">Be Part of Our Journey</a>
+        <a href="#story" class="btn btn-outline-w">Read Our Story</a>
       </div>
       <div class="hero-nums">
-        <div><div class="hnum-val">99<span>%</span></div><div class="hnum-label">Uptime SLA</div></div>
-        <div><div class="hnum-val">4<span>hr</span></div><div class="hnum-label">Response Time</div></div>
-        <div><div class="hnum-val">1<span>day</span></div><div class="hnum-label">Installation</div></div>
-        <div><div class="hnum-val">₹<span>0</span></div><div class="hnum-label">Cost To You</div></div>
+        <div><div class="hn-val">99<span>%</span></div><div class="hn-lbl">Uptime SLA</div></div>
+        <div><div class="hn-val">4<span>hr</span></div><div class="hn-lbl">Response Time</div></div>
+        <div><div class="hn-val">1<span>day</span></div><div class="hn-lbl">Installation</div></div>
+        <div><div class="hn-val">₹<span>0</span></div><div class="hn-lbl">Cost To You</div></div>
       </div>
     </div>
   </div>
@@ -332,39 +347,51 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 
 <!-- MARQUEE -->
 <div id="marquee">
-  <div class="marquee-track">
-    <span>Smart Vending</span><span class="marquee-sep">·</span>
-    <span>Zero Capex</span><span class="marquee-sep">·</span>
-    <span>Cashless & UPI</span><span class="marquee-sep">·</span>
-    <span>IoT Monitored</span><span class="marquee-sep">·</span>
-    <span>FSSAI Certified</span><span class="marquee-sep">·</span>
-    <span>Fully Managed</span><span class="marquee-sep">·</span>
-    <span>99% Uptime</span><span class="marquee-sep">·</span>
-    <span>Revenue Share</span><span class="marquee-sep">·</span>
-    <span>Smart Vending</span><span class="marquee-sep">·</span>
-    <span>Zero Capex</span><span class="marquee-sep">·</span>
-    <span>Cashless & UPI</span><span class="marquee-sep">·</span>
-    <span>IoT Monitored</span><span class="marquee-sep">·</span>
-    <span>FSSAI Certified</span><span class="marquee-sep">·</span>
-    <span>Fully Managed</span><span class="marquee-sep">·</span>
-    <span>99% Uptime</span><span class="marquee-sep">·</span>
-    <span>Revenue Share</span><span class="marquee-sep">·</span>
+  <div class="mtrack">
+    <span>IIM Founded</span><span class="msep">·</span><span>Smart Vending</span><span class="msep">·</span><span>Zero Capex</span><span class="msep">·</span><span>Cashless & UPI</span><span class="msep">·</span><span>IoT Monitored</span><span class="msep">·</span><span>FSSAI Certified</span><span class="msep">·</span><span>99% Uptime</span><span class="msep">·</span><span>Revenue Share</span><span class="msep">·</span>
+    <span>IIM Founded</span><span class="msep">·</span><span>Smart Vending</span><span class="msep">·</span><span>Zero Capex</span><span class="msep">·</span><span>Cashless & UPI</span><span class="msep">·</span><span>IoT Monitored</span><span class="msep">·</span><span>FSSAI Certified</span><span class="msep">·</span><span>99% Uptime</span><span class="msep">·</span><span>Revenue Share</span><span class="msep">·</span>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section id="how-it-works">
+<!-- OUR STORY -->
+<section id="story">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="sec-label">Process</span>
-      <h2>From enquiry to first vend in 4 steps</h2>
-      <p class="sdesc">Zero capital outlay. We handle everything — from site visit to daily restocking.</p>
+    <div class="story-inner">
+      <div class="story-img-wrap reveal">
+        <img class="story-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&fit=crop" alt="Modern vending machine with snacks" loading="lazy">
+        <div class="story-badge">
+          <div class="story-badge-val">IIM</div>
+          <div class="story-badge-lbl">Sambalpur</div>
+        </div>
+      </div>
+      <div class="story-text reveal" style="transition-delay:150ms">
+        <span class="sec-tag">The Wrotron Story</span>
+        <h2>One IIM grad.<br>One broken industry.<br>One big mission.</h2>
+        <p>India has over 10 million offices, hospitals, factories and campuses. Almost none of them have reliable, modern vending. Workers queue for chai. Hospital staff skip meals. Campus students can't find a snack at midnight.</p>
+        <p>Wrotron was founded to fix exactly this. We're not just selling machines — we're building the infrastructure layer that makes Indian workplaces more productive, more comfortable, and more modern.</p>
+        <p><strong style="color:var(--dark)">We're early. We're growing fast. And we want you with us.</strong> Every organisation that partners with Wrotron today isn't just getting a vending machine — they're backing an idea whose time has come.</p>
+        <div class="story-cta">
+          <a href="#" class="btn btn-orange open-modal">Partner With Us</a>
+          <span class="story-cta-note">Free to set up · Zero risk · Be part of history</span>
+        </div>
+      </div>
     </div>
-    <div class="steps">
-      <div class="card step reveal"><div class="step-n">01</div><h3>Free Site Survey</h3><p>We visit your premises, assess footfall and placement, and recommend the right machine mix.</p></div>
-      <div class="card step reveal" style="transition-delay:80ms"><div class="step-n">02</div><h3>Custom Product Plan</h3><p>We curate snacks, beverages, or electronics tailored to your employees or visitors.</p></div>
-      <div class="card step reveal" style="transition-delay:160ms"><div class="step-n">03</div><h3>Installation in 1 Day</h3><p>Machines installed, cloud-connected, and payment-activated in a single working day.</p></div>
-      <div class="card step reveal" style="transition-delay:240ms"><div class="step-n">04</div><h3>Fully Managed for You</h3><p>We monitor stock live, restock proactively, and handle all maintenance. Your team does nothing.</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="sh reveal">
+      <span class="sec-tag">The Process</span>
+      <h2>Up and vending in 4 steps</h2>
+      <p class="sdesc">Zero capital outlay. We handle everything — site visit to daily restocking.</p>
+    </div>
+    <div class="steps-g">
+      <div class="step reveal"><div class="step-n">01</div><h3>Free Site Survey</h3><p>We visit your premises, assess footfall & placement, and recommend the right machine mix — at no charge.</p></div>
+      <div class="step reveal" style="transition-delay:80ms"><div class="step-n">02</div><h3>Custom Stocking Plan</h3><p>We curate snacks, beverages or electronics tailored exactly to your employees, visitors and culture.</p></div>
+      <div class="step reveal" style="transition-delay:160ms"><div class="step-n">03</div><h3>1-Day Installation</h3><p>Machines installed, cloud-connected, payment-activated — in a single working day without disrupting your operations.</p></div>
+      <div class="step reveal" style="transition-delay:240ms"><div class="step-n">04</div><h3>Fully Managed Forever</h3><p>We monitor live, restock proactively, and handle every repair. Your admin team does absolutely nothing.</p></div>
     </div>
   </div>
 </section>
@@ -372,45 +399,45 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- SOLUTIONS -->
 <section id="solutions">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="sec-label">What We Offer</span>
-      <h2>Two powerful vending solutions</h2>
-      <p class="sdesc">Whether your employees need a company-sponsored snack break or your visitors need pay-per-use access — we have the right solution.</p>
+    <div class="sh reveal">
+      <span class="sec-tag">What We Offer</span>
+      <h2>Two solutions. One reliable partner.</h2>
+      <p class="sdesc">Whether it's a snack break or a spare charging cable — Wrotron has your people covered around the clock.</p>
     </div>
 
-    <div class="sol-item reveal">
+    <div class="sol reveal">
       <div class="sol-img">
-        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80&fit=crop" alt="Snacks and beverages vending machine in office" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=800&q=80&fit=crop" alt="Vending machine stocked with snacks and drinks" loading="lazy">
       </div>
       <div class="sol-text">
-        <span class="sec-label">Snacks &amp; Beverages</span>
+        <span class="sec-tag">Snacks &amp; Beverages</span>
         <h2>A fully stocked pantry,<br>without the pantry.</h2>
-        <p>From morning coffee to afternoon energy bars — Wrotron keeps your team fuelled around the clock. We stock top FMCG brands plus healthy alternatives, curated specifically for your location.</p>
-        <ul class="check-list">
-          <li>Cold beverages, hot drinks, packaged snacks &amp; energy drinks</li>
-          <li>FSSAI-approved products — full regulatory compliance</li>
-          <li>Custom product mix based on your team's preferences</li>
-          <li>Real-time inventory monitoring — never out of stock</li>
-          <li>UPI, card &amp; NFC tap-to-pay — no cash handling</li>
+        <p>From morning coffee to afternoon energy bars — our machines keep your people fuelled all day. Stocked with top FMCG brands and healthy options, curated for your specific location and team.</p>
+        <ul class="cklist">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cold beverages, hot drinks, packaged snacks &amp; energy bars</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>FSSAI-approved products — full regulatory compliance</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Custom product mix tailored to your team's preferences</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Real-time IoT monitoring — never out of stock</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>UPI, card &amp; NFC payments — zero cash handling</li>
         </ul>
         <a href="#" class="btn btn-orange open-modal">Get a Free Survey</a>
       </div>
     </div>
 
-    <div class="sol-item flip reveal">
+    <div class="sol rev reveal">
       <div class="sol-img">
-        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=800&q=80&fit=crop" alt="Electronics accessories vending machine" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Smart vending machine electronics accessories" loading="lazy">
       </div>
       <div class="sol-text">
-        <span class="sec-label">Electronics &amp; Accessories</span>
-        <h2>Everyday tech,<br>instantly available.</h2>
-        <p>Charging cables, power banks, earbuds, adapters — our electronics vending modules are perfect for airports, campuses, co-working spaces, and high-footfall offices where people always need a quick fix.</p>
-        <ul class="check-list">
-          <li>Charging cables, power banks &amp; USB hubs</li>
-          <li>Earbuds, adapters &amp; screen protectors</li>
-          <li>Touchscreen selection with instant dispense</li>
-          <li>Stocked with trusted brands — not generic fillers</li>
-          <li>Ideal for campuses, hospitals &amp; co-working spaces</li>
+        <span class="sec-tag">Electronics &amp; Accessories</span>
+        <h2>Everyday tech,<br>always in stock.</h2>
+        <p>Charging cables, power banks, earbuds — our electronics modules ensure your employees and visitors are never stranded. Perfect for campuses, hospitals and co-working spaces.</p>
+        <ul class="cklist">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Charging cables, power banks &amp; USB hubs</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Earbuds, adapters &amp; screen protectors</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Touchscreen interface, instant dispense</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Trusted brands — not generic fillers</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Ideal for campuses, hospitals &amp; high-footfall offices</li>
         </ul>
         <a href="#" class="btn btn-orange open-modal">Get a Free Survey</a>
       </div>
@@ -421,41 +448,35 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- SECTORS -->
 <section id="sectors">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="sec-label" style="color:#fb923c">Industries We Serve</span>
-      <h2 class="light">Built for every B2B environment</h2>
-      <p class="sdesc light">Wherever people gather and need convenient access to essentials — Wrotron fits right in.</p>
+    <div class="sh reveal">
+      <span class="sec-tag" style="color:#fb923c">Where We Operate</span>
+      <h2 class="lgt">Every space where people gather</h2>
+      <p class="sdesc lgt">From boardrooms to factory floors — if your people need a break, Wrotron belongs there.</p>
     </div>
-    <div class="sectors-grid">
-      <div class="sector-card reveal">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=70&fit=crop" alt="Corporate office" loading="lazy">
-        <h3>🏢 Corporate Offices</h3>
-        <p>Keep your team fuelled and productive — all day, every day, without cafeteria queues.</p>
+    <div class="sec-g">
+      <div class="sec-card reveal">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=70&fit=crop" alt="Corporate office" loading="lazy">
+        <div class="sec-card-body"><h3>🏢 Corporate Offices</h3><p>Keep your team productive — snacks and drinks available all day, no cafeteria queues.</p></div>
       </div>
-      <div class="sector-card reveal" style="transition-delay:80ms">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=70&fit=crop" alt="Hospital" loading="lazy">
-        <h3>🏥 Hospitals &amp; Clinics</h3>
-        <p>Round-the-clock access for staff on long shifts, patients in waiting areas, and visiting families.</p>
+      <div class="sec-card reveal" style="transition-delay:80ms">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=70&fit=crop" alt="Hospital" loading="lazy">
+        <div class="sec-card-body"><h3>🏥 Hospitals &amp; Clinics</h3><p>24/7 access for staff on long shifts, patients in waiting areas, and visiting families.</p></div>
       </div>
-      <div class="sector-card reveal" style="transition-delay:160ms">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=70&fit=crop" alt="University campus" loading="lazy">
-        <h3>🎓 Schools &amp; Colleges</h3>
-        <p>Healthy snacks, stationery and tech accessories for modern campuses.</p>
+      <div class="sec-card reveal" style="transition-delay:160ms">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=70&fit=crop" alt="University campus" loading="lazy">
+        <div class="sec-card-body"><h3>🎓 Schools &amp; Colleges</h3><p>Healthy snacks and tech accessories for modern campuses that want real convenience.</p></div>
       </div>
-      <div class="sector-card reveal" style="transition-delay:240ms">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=70&fit=crop" alt="Co-working space" loading="lazy">
-        <h3>💼 Co-Working Spaces</h3>
-        <p>A premium amenity for your members — at zero cost to you.</p>
+      <div class="sec-card reveal" style="transition-delay:240ms">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=70&fit=crop" alt="Co-working space" loading="lazy">
+        <div class="sec-card-body"><h3>💼 Co-Working Spaces</h3><p>A premium amenity that boosts member satisfaction — at zero cost to you.</p></div>
       </div>
-      <div class="sector-card reveal" style="transition-delay:320ms">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=70&fit=crop" alt="Manufacturing factory" loading="lazy">
-        <h3>🏭 Manufacturing Units</h3>
-        <p>Fast access to snacks during shifts — without floor workers leaving their posts.</p>
+      <div class="sec-card reveal" style="transition-delay:320ms">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=70&fit=crop" alt="Manufacturing factory" loading="lazy">
+        <div class="sec-card-body"><h3>🏭 Manufacturing Units</h3><p>Fast snack access during shifts — floor workers stay energised without leaving posts.</p></div>
       </div>
-      <div class="sector-card reveal" style="transition-delay:400ms">
-        <img class="sector-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=70&fit=crop" alt="Gym fitness centre" loading="lazy">
-        <h3>🏋️ Gyms &amp; Wellness</h3>
-        <p>Energy bars, protein drinks, earbuds — the perfect complement to a fitness space.</p>
+      <div class="sec-card reveal" style="transition-delay:400ms">
+        <img class="sec-card-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=70&fit=crop" alt="Gym" loading="lazy">
+        <div class="sec-card-body"><h3>🏋️ Gyms &amp; Wellness</h3><p>Energy bars, protein drinks, earbuds — the perfect fit for modern fitness spaces.</p></div>
       </div>
     </div>
   </div>
@@ -464,18 +485,18 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- FEATURES -->
 <section id="features">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="sec-label">Technology</span>
+    <div class="sh reveal">
+      <span class="sec-tag">Technology</span>
       <h2>Smart machines. Zero hassle.</h2>
-      <p class="sdesc">Every Wrotron machine is cloud-connected, data-driven and fully managed.</p>
+      <p class="sdesc">Every Wrotron machine is cloud-connected, data-driven and fully managed — you never have to think about it.</p>
     </div>
-    <div class="feat-grid">
-      <div class="feat-card reveal"><div class="feat-icon">💳</div><h3>Cashless &amp; UPI Payments</h3><p>UPI, cards, NFC wallets — every modern Indian payment method supported. No cash required.</p></div>
-      <div class="feat-card reveal" style="transition-delay:60ms"><div class="feat-icon">📡</div><h3>Real-Time IoT Monitoring</h3><p>Machines self-report stock levels and faults. We restock and repair before you notice anything.</p></div>
-      <div class="feat-card reveal" style="transition-delay:120ms"><div class="feat-icon">📊</div><h3>Monthly Analytics Report</h3><p>Full transparency on sales, top products, peak usage times and machine health — every month.</p></div>
-      <div class="feat-card reveal" style="transition-delay:180ms"><div class="feat-icon">⚡</div><h3>99% Uptime SLA</h3><p>Guaranteed in writing. Field engineers on-site within 4 hours of any fault report.</p></div>
-      <div class="feat-card reveal" style="transition-delay:240ms"><div class="feat-icon">🆓</div><h3>Zero Cost to You</h3><p>Machine, installation, restocking, maintenance — we fund it all from product sales revenue.</p></div>
-      <div class="feat-card reveal" style="transition-delay:300ms"><div class="feat-icon">💰</div><h3>Revenue Share Option</h3><p>High-footfall locations earn a percentage of sales — your space works for you.</p></div>
+    <div class="feat-g">
+      <div class="fc reveal"><div class="fc-icon">💳</div><h3>Cashless &amp; UPI</h3><p>UPI, cards, NFC wallets — every modern Indian payment supported. No cash, no friction.</p></div>
+      <div class="fc reveal" style="transition-delay:60ms"><div class="fc-icon">📡</div><h3>IoT Monitoring</h3><p>Machines self-report stock and faults. We restock and repair before you notice a problem.</p></div>
+      <div class="fc reveal" style="transition-delay:120ms"><div class="fc-icon">📊</div><h3>Monthly Reports</h3><p>Full transparency on sales, top products, peak hours and machine health — every single month.</p></div>
+      <div class="fc reveal" style="transition-delay:180ms"><div class="fc-icon">⚡</div><h3>99% Uptime SLA</h3><p>Guaranteed in writing. Engineers on-site within 4 hours of any fault. No exceptions.</p></div>
+      <div class="fc reveal" style="transition-delay:240ms"><div class="fc-icon">🆓</div><h3>Zero Cost to You</h3><p>Machine, install, restock, maintain — we fund it all. You provide space, we do the rest.</p></div>
+      <div class="fc reveal" style="transition-delay:300ms"><div class="fc-icon">💰</div><h3>Revenue Share</h3><p>High-footfall locations earn a cut of every sale. Your space generates income for you.</p></div>
     </div>
   </div>
 </section>
@@ -483,16 +504,46 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- BRANDS -->
 <section id="brands">
   <div class="container">
-    <p class="brands-label">Products from brands your team already loves</p>
-    <div class="brands-row">
-      <div class="brand-pill">HALDIRAM'S</div>
-      <div class="brand-pill">COCA-COLA</div>
-      <div class="brand-pill">NESTLE</div>
-      <div class="brand-pill">BRITANNIA</div>
-      <div class="brand-pill">ITC</div>
-      <div class="brand-pill">AMUL</div>
-      <div class="brand-pill">RED BULL</div>
-      <div class="brand-pill">CADBURY</div>
+    <p class="bl">Products from brands your people already love</p>
+    <div class="br">
+      <div class="bp">HALDIRAM'S</div><div class="bp">COCA-COLA</div><div class="bp">NESTLE</div>
+      <div class="bp">BRITANNIA</div><div class="bp">ITC</div><div class="bp">AMUL</div>
+      <div class="bp">RED BULL</div><div class="bp">CADBURY</div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN THE JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="journey-inner">
+      <div class="reveal">
+        <span class="sec-tag" style="color:#fb923c">Be Part of Something Big</span>
+        <h2 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem">We're at Chapter One.<br>We want <em style="color:var(--orange);font-style:normal">you</em> in the story.</h2>
+        <p class="sdesc lgt" style="margin-bottom:0">India's vending market is a ₹5,000 crore opportunity that's barely been touched. We're the team with the IIM training, the tech stack, and the hunger to build it right. All we need is partners who believe in what comes next.</p>
+        <div class="journey-perks">
+          <div class="perk">
+            <div class="perk-icon">🤝</div>
+            <div><h4>Early Partner Advantage</h4><p>Organisations that partner with us now get priority service, best placement, and co-branding rights as we grow.</p></div>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">📈</div>
+            <div><h4>Grow With Us</h4><p>Your revenue share increases as our network grows. Early clients earn better rates as Wrotron scales nationally.</p></div>
+          </div>
+          <div class="perk">
+            <div class="perk-icon">🏆</div>
+            <div><h4>Zero Downside</h4><p>No investment, no risk, no lock-in. If we ever fall short of our SLA, we credit you. That's the Wrotron promise.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:150ms">
+        <div class="journey-cta-box">
+          <h3>Ready to partner<br>with us?</h3>
+          <p>Tell us about your space. We'll come for a free site survey within 48 hours and have a proposal on your desk — no pressure, no cost, no obligation.</p>
+          <a href="#" class="btn btn-orange open-modal">Request a Free Survey</a>
+          <p class="journey-note">Joining 50+ forward-thinking organisations already on board</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -500,32 +551,32 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="about-grid">
+    <div class="about-g">
       <div class="about-img-wrap reveal">
         <img class="about-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&fit=crop&crop=face" alt="Wrotron founder" loading="lazy">
-        <div class="about-badge">
-          <div class="about-badge-val">IIM</div>
-          <div class="about-badge-lbl">Alumni Founded</div>
+        <div class="about-bdg">
+          <div class="about-bdg-v">IIM</div>
+          <div class="about-bdg-l">Alumni Venture</div>
         </div>
       </div>
       <div class="about-text reveal" style="transition-delay:150ms">
-        <span class="sec-label">About Wrotron</span>
-        <h2>IIM insight.<br>Ground-level execution.</h2>
-        <p>Wrotron was built on a simple belief: India's workplaces deserve the same quality of vending infrastructure that global companies take for granted — reliable machines, cashless payments, real-time monitoring, and a partner that actually shows up.</p>
-        <p>We're not a distributor. We're an operator. Every machine we place is our full responsibility — from day one, forever.</p>
-        <div class="founder-row">
-          <div class="founder-ava">RG</div>
+        <span class="sec-tag">About the Founder</span>
+        <h2>The person behind<br>the mission.</h2>
+        <p>Rohit Kumar Gorai built Wrotron out of a genuine frustration with how broken workplace convenience is in India. After witnessing it first-hand across factories, hospitals and offices, he decided an IIM education and a cloud engineering background were exactly the tools needed to fix it.</p>
+        <p>We're not a large corporation. We're a lean, hungry team that cares deeply about every machine we place — because each one represents a workplace that deserves better. When you partner with Wrotron, you deal directly with the people who built it.</p>
+        <div class="founder-card">
+          <div class="f-ava">RG</div>
           <div>
-            <div class="founder-name">Rohit Kumar Gorai</div>
-            <div class="founder-role">Founder &amp; Managing Director</div>
-            <div class="founder-tags">
-              <span class="ftag">IIM Sambalpur MBA</span>
-              <span class="ftag">GCP Certified</span>
-              <span class="ftag">ex-Persistent Systems</span>
+            <div class="f-name">Rohit Kumar Gorai</div>
+            <div class="f-role">Founder &amp; Managing Director</div>
+            <div class="f-tags">
+              <span class="ft">IIM Sambalpur MBA</span>
+              <span class="ft">GCP Certified</span>
+              <span class="ft">ex-Persistent Systems</span>
             </div>
-            <a href="https://www.linkedin.com/in/rohit-gorai-iim/" target="_blank" class="linkedin-link">
+            <a href="https://www.linkedin.com/in/rohit-gorai-iim/" target="_blank" class="li-link">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              View LinkedIn
+              Connect on LinkedIn
             </a>
           </div>
         </div>
@@ -537,38 +588,38 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- FAQ -->
 <section id="faq">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="sec-label">FAQ</span>
+    <div class="sh reveal">
+      <span class="sec-tag">FAQ</span>
       <h2>Questions we always get asked</h2>
-      <p class="sdesc">Answered clearly — because we want you confident before signing anything.</p>
+      <p class="sdesc">Answered honestly — because we want you confident before you say yes.</p>
     </div>
-    <div class="faq-wrap">
-      <div class="fi"><button class="fi-q"><span>Is there really zero cost to our organisation?</span><span class="fi-icon">+</span></button><div class="fi-a">Correct — zero cost. Wrotron funds the machine, installation, restocking and maintenance entirely. In high-footfall locations we also offer a revenue share. We recover our cost from product sales, not from you.</div></div>
-      <div class="fi"><button class="fi-q"><span>What happens when a machine breaks down?</span><span class="fi-icon">+</span></button><div class="fi-a">Our machines are IoT-connected and self-report faults. Our SLA guarantees an on-site field engineer within 4 working hours. Persistent downtime beyond SLA threshold triggers service credits to your organisation.</div></div>
-      <div class="fi"><button class="fi-q"><span>How long does installation take?</span><span class="fi-icon">+</span></button><div class="fi-a">After a site survey and signed agreement, installation is typically within 5–7 working days. The installation itself — machine placement, cabling, payment activation and cloud connection — is done in a single day.</div></div>
-      <div class="fi"><button class="fi-q"><span>Can we choose what goes in the machine?</span><span class="fi-icon">+</span></button><div class="fi-a">Absolutely. We work collaboratively on the product mix — brand preferences, dietary requirements, price points. The mix can also be adjusted anytime based on monthly analytics we share with you.</div></div>
-      <div class="fi"><button class="fi-q"><span>What payment methods do the machines accept?</span><span class="fi-icon">+</span></button><div class="fi-a">All machines are fully cashless: UPI (PhonePe, GPay, Paytm, BHIM), debit &amp; credit cards (Visa, Mastercard, RuPay), and NFC contactless. No cash — eliminating pilferage and reconciliation concerns.</div></div>
-      <div class="fi"><button class="fi-q"><span>Can machines be co-branded with our logo?</span><span class="fi-icon">+</span></button><div class="fi-a">Yes. For deployments of 3+ machines we offer co-branding and custom wrapping with your organisation's visual identity — turning the machine into a brand touchpoint for your employees.</div></div>
+    <div class="fq-wrap">
+      <div class="fi"><button class="fi-q"><span>Is there really zero cost to our organisation?</span><span class="fi-ic">+</span></button><div class="fi-a">Correct — zero cost. Wrotron funds the machine, installation, restocking and all maintenance entirely. In high-footfall locations we also offer a revenue share, meaning you actually earn. We recover our cost from product sales — not from you.</div></div>
+      <div class="fi"><button class="fi-q"><span>You're a new company — why should we trust you?</span><span class="fi-ic">+</span></button><div class="fi-a">Fair question. We're early-stage — and that's exactly why we work harder than anyone else to keep every client happy. We offer a full written SLA with service credits for any downtime, and every commitment we make is contractually backed. We also provide GST registration, FSSAI compliance docs, and a company registration certificate on request.</div></div>
+      <div class="fi"><button class="fi-q"><span>What happens when a machine breaks down?</span><span class="fi-ic">+</span></button><div class="fi-a">Our machines are IoT-connected and self-report faults in real time. Our SLA guarantees an on-site field engineer within 4 working hours. Downtime beyond the SLA threshold triggers automatic service credits to your organisation.</div></div>
+      <div class="fi"><button class="fi-q"><span>How long does installation take?</span><span class="fi-ic">+</span></button><div class="fi-a">After a site survey and signed agreement, installation is within 5–7 working days. The actual installation — placement, cabling, payment activation and cloud connection — takes a single working day and does not disrupt your operations.</div></div>
+      <div class="fi"><button class="fi-q"><span>Can we choose what goes in the machine?</span><span class="fi-ic">+</span></button><div class="fi-a">Absolutely. We build the product mix collaboratively with you — brands, dietary preferences, price points. You can also request changes anytime based on the monthly analytics report we share with you.</div></div>
+      <div class="fi"><button class="fi-q"><span>What payment methods do the machines support?</span><span class="fi-ic">+</span></button><div class="fi-a">All machines are fully cashless: UPI (PhonePe, GPay, Paytm, BHIM), debit &amp; credit cards (Visa, Mastercard, RuPay), and NFC contactless. No cash accepted — eliminating pilferage and reconciliation overhead.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA FINAL -->
 <section id="cta">
   <div class="container">
-    <div class="cta-inner reveal">
-      <span class="sec-label" style="color:#fb923c">Get Started — Free &amp; No Obligation</span>
-      <h2>Ready to bring smarter vending<br>to your organisation?</h2>
-      <p>Request a free site survey — we'll have a full proposal ready within 48 hours. No commitment, no cost, no pressure.</p>
+    <div class="cta-in reveal">
+      <span class="sec-tag" style="color:#fb923c">The Invitation</span>
+      <h2>India's vending revolution<br>starts with <em style="color:var(--orange);font-style:normal">your</em> space.</h2>
+      <p>We're building something the country has needed for decades. We'd love for your organisation to be an early part of that story. A free survey, a conversation, a handshake — that's all it takes to get started.</p>
       <div class="cta-btns">
         <a href="#" class="btn btn-orange open-modal">Request a Free Survey</a>
-        <a href="https://wa.me/918969309787" target="_blank" class="btn btn-white" style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15)">💬 WhatsApp Us</a>
-        <a href="mailto:admin.team@wrotron.in" class="btn btn-outline" style="color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.15)">✉️ Email Us</a>
+        <a href="https://wa.me/918969309787" target="_blank" class="btn btn-outline-w">💬 WhatsApp Us</a>
+        <a href="mailto:admin.team@wrotron.in" class="btn btn-outline-w">✉️ Email Us</a>
       </div>
-      <div class="contact-row">
+      <div class="cta-strip">
         <span class="ci">📞 <a href="tel:+918969309787">+91 89693 09787</a></span>
         <span class="ci">✉️ <a href="mailto:admin.team@wrotron.in">admin.team@wrotron.in</a></span>
-        <span class="ci">⏱️ We respond within 4 hours</span>
+        <span class="ci">⏱️ Response within 4 hours</span>
       </div>
     </div>
   </div>
@@ -577,43 +628,42 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-g">
+    <div class="fg">
       <div>
-        <div class="fb-logo">
-          <a href="#hero" class="logo">
-            <div class="logo-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" fill="white" opacity="0.9"/><rect x="6" y="5" width="12" height="6" rx="1" fill="#f97316"/></svg></div>
-            <span class="logo-name" style="color:#fff">Wrotron<span>.in</span></span>
-          </a>
-        </div>
-        <p class="fb-desc">Smart B2B vending solutions for offices, hospitals, campuses and factories across India. Zero capex, fully managed, 99% uptime SLA.</p>
+        <a href="#hero" class="logo" style="margin-bottom:0.8rem;display:inline-flex">
+          <div class="logo-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" fill="white" opacity="0.9"/><rect x="6" y="5" width="12" height="6" rx="1" fill="#f97316"/></svg></div>
+          <span class="logo-name" style="color:#fff">Wrotron<span>.in</span></span>
+        </a>
+        <p class="fb-desc">An IIM-founded startup disrupting smart vending across India — offices, hospitals, campuses and factories. Zero capex. Fully managed. 99% uptime.</p>
         <div class="fb-contact">
           <a href="tel:+918969309787">📞 +91 89693 09787</a>
           <a href="mailto:admin.team@wrotron.in">✉️ admin.team@wrotron.in</a>
         </div>
       </div>
       <div>
-        <div class="fc-title">Navigation</div>
-        <ul class="fc-links">
-          <li><a href="#solutions">Our Solutions</a></li>
+        <div class="fc-t">Navigate</div>
+        <ul class="fc-l">
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#solutions">Solutions</a></li>
           <li><a href="#sectors">Industries</a></li>
           <li><a href="#features">Technology</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#journey">Join Us</a></li>
         </ul>
       </div>
       <div>
-        <div class="fc-title">Contact</div>
-        <ul class="fc-links">
+        <div class="fc-t">Contact</div>
+        <ul class="fc-l">
           <li><a href="#" class="open-modal">Request a Proposal</a></li>
           <li><a href="https://wa.me/918969309787" target="_blank">WhatsApp</a></li>
           <li><a href="mailto:admin.team@wrotron.in">Email Us</a></li>
           <li><a href="https://www.linkedin.com/in/rohit-gorai-iim/" target="_blank">LinkedIn</a></li>
+          <li><a href="#about">About the Founder</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bot">
-      <p class="footer-copy">&copy; 2025 Wrotron Technologies Pvt. Ltd. · All rights reserved · An IIM Alumni Venture · Made in India 🇮🇳</p>
-      <div class="footer-legal">
+    <div class="fbot">
+      <p class="fcopy">&copy; 2025 Wrotron Technologies Pvt. Ltd. · All rights reserved · An IIM Alumni Venture · Made in India 🇮🇳</p>
+      <div class="fleg">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">SLA Document</a>
@@ -624,17 +674,17 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
 
 <!-- WA FAB -->
 <a href="https://wa.me/918969309787" target="_blank" class="wa-fab" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.474.854-1.021 3.726 3.772-1.009.826.47z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.474.854-1.021 3.726 3.772-1.009.826.47z"/></svg>
 </a>
 
 <!-- MODAL -->
 <div class="modal-bg" id="modal">
   <div class="modal-box">
-    <div class="modal-hd">
+    <div class="mhd">
       <h3>Request a Free Site Survey</h3>
-      <button class="modal-x" id="modal-close">&times;</button>
+      <button class="mx" id="modal-close">&times;</button>
     </div>
-    <p class="modal-sub">Fill in the details and our team will get back within 4 business hours.</p>
+    <p class="msub">Join our growing network — tell us about your space and we'll be in touch within 4 hours.</p>
     <form id="contact-form">
       <div class="ff-row">
         <div class="ff"><label>Your Name</label><input type="text" name="name" required placeholder="Rahul Mehta"></div>
@@ -654,8 +704,8 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
           </select>
         </div>
       </div>
-      <div class="ff"><label>Message / Requirements</label><textarea name="message" placeholder="Location, floors, product needs, any specific requirements..."></textarea></div>
-      <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.78rem" id="submit-btn">Submit Request</button>
+      <div class="ff"><label>Anything else?</label><textarea name="message" placeholder="Location, floors, specific needs, or just say hello..."></textarea></div>
+      <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;font-size:0.95rem;padding:0.78rem" id="submit-btn">Be Part of Our Journey</button>
       <div id="form-status"></div>
     </form>
   </div>
@@ -669,16 +719,14 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
   const cfg={apiKey:"AIzaSyCAQGSP6chmETveZ-vuUaaNPKT2wVUvE_o",authDomain:"wrotron-e2ded.firebaseapp.com",projectId:"wrotron-e2ded",storageBucket:"wrotron-e2ded.appspot.com",messagingSenderId:"440892226154",appId:"1:440892226154:web:09bdd38649631fbba66813",measurementId:"G-TJGGE3CB57"};
   let db=null,auth=null;
   try{const a=initializeApp(cfg);db=getFirestore(a);auth=getAuth(a);getAnalytics(a);signInAnonymously(auth).catch(()=>{auth=null});}catch(e){}
-
   const modal=document.getElementById('modal');
   const openM=e=>{e.preventDefault();modal.classList.add('open');document.body.style.overflow='hidden';};
   const closeM=()=>{modal.classList.remove('open');document.body.style.overflow='';resetF();};
   document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',openM));
   document.getElementById('modal-close').addEventListener('click',closeM);
   modal.addEventListener('click',e=>{if(e.target===modal)closeM();});
-
   const form=document.getElementById('contact-form'),st=document.getElementById('form-status'),sb=document.getElementById('submit-btn');
-  const resetF=()=>{form.reset();st.textContent='';st.style.color='';sb.disabled=false;sb.textContent='Submit Request';};
+  const resetF=()=>{form.reset();st.textContent='';st.style.color='';sb.disabled=false;sb.textContent='Be Part of Our Journey';};
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     if(!db){st.textContent='Error — please email admin.team@wrotron.in';st.style.color='#ef4444';return;}
@@ -686,19 +734,15 @@ footer{background:#07091a;padding:4rem 0 1.5rem;border-top:1px solid rgba(255,25
     const fd=new FormData(form);
     try{
       await addDoc(collection(db,'vending_leads'),{name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),org_name:fd.get('org_name'),org_type:fd.get('org_type'),footfall:fd.get('footfall'),message:fd.get('message'),submittedAt:serverTimestamp()});
-      st.textContent='✓ Request received! We\'ll be in touch within 4 hours.';st.style.color='#10b981';
+      st.textContent="✓ Welcome aboard! We'll be in touch within 4 hours.";st.style.color='#10b981';
       setTimeout(closeM,3000);
-    }catch(err){st.textContent='Error — please email admin.team@wrotron.in directly.';st.style.color='#ef4444';sb.disabled=false;sb.textContent='Submit Request';}
+    }catch(err){st.textContent='Error — please email admin.team@wrotron.in';st.style.color='#ef4444';sb.disabled=false;sb.textContent='Be Part of Our Journey';}
   });
-
   const hb=document.getElementById('hamburger'),mn=document.getElementById('mobile-nav');
   hb.addEventListener('click',()=>mn.classList.toggle('open'));
   mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')));
-
-  new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.07}).observe;
-  const obs=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.07});
+  const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.07});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
   document.querySelectorAll('.fi-q').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const it=btn.parentElement,was=it.classList.contains('open');
