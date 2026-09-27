@@ -28,4 +28,4 @@ Only add numbers, clients and results you can verify.
 
 ## Photos
 
-Photos come from Wikimedia Commons under CC0, CC BY, CC BY-SA or public-domain terms. Replace them with Wrotron's own photos as soon as possible, and keep `credits.json` and `credits.html` in step.
+The machine images are illustrative vector renders (no real deployment implied). Photos come from Wikimedia Commons under CC0, CC BY, CC BY-SA or public-domain terms. Replace them with Wrotron's own photos as soon as possible, and keep `credits.json` and `credits.html` in step.

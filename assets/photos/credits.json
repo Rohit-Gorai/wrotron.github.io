@@ -1,18 +1,4 @@
 {
- "hero-machine": {
-  "id": "cm:196230240",
-  "title": "File:Vending machine (Goa University).jpg",
-  "user": "NICOLE CUNCOLIM",
-  "license": "CC0",
-  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Vending_machine_(Goa_University).jpg",
-  "size": [
-   2999,
-   3285
-  ],
-  "width": 1400,
-  "height": 1639
- },
  "office-pantry": {
   "id": "cm:170068627",
   "title": "File:Vending machines (58864).jpg",
@@ -110,20 +96,6 @@
   ],
   "width": 1600,
   "height": 1068
- },
- "machines-corner": {
-  "id": "cm:163498111",
-  "title": "File:Soft drink and snack vending machines, Chico (2025)-L1007024.jpg",
-  "user": "Frank Schulenburg",
-  "license": "CC BY-SA 4.0",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Soft_drink_and_snack_vending_machines,_Chico_(2025)-L1007024.jpg",
-  "size": [
-   8630,
-   6164
-  ],
-  "width": 1600,
-  "height": 1143
  },
  "restock": {
   "id": "cm:41662842",
