@@ -1,0 +1,156 @@
+{
+ "hero-machine": {
+  "id": "cm:196230240",
+  "title": "File:Vending machine (Goa University).jpg",
+  "user": "NICOLE CUNCOLIM",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "page": "https://commons.wikimedia.org/wiki/File:Vending_machine_(Goa_University).jpg",
+  "size": [
+   2999,
+   3285
+  ],
+  "width": 1400,
+  "height": 1639
+ },
+ "office-pantry": {
+  "id": "cm:170068627",
+  "title": "File:Vending machines (58864).jpg",
+  "user": "EvanCarroll",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vending_machines_(58864).jpg",
+  "size": [
+   4000,
+   3000
+  ],
+  "width": 1600,
+  "height": 1200
+ },
+ "office": {
+  "id": "cm:131611359",
+  "title": "File:Gurgaon google india office inside1.jpg",
+  "user": "J ansari",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gurgaon_google_india_office_inside1.jpg",
+  "size": [
+   2560,
+   1152
+  ],
+  "width": 1600,
+  "height": 837
+ },
+ "hospital": {
+  "id": "cm:154043652",
+  "title": "File:İzmir Şehir Hastanesi 5.jpg",
+  "user": "Satirdan kahraman",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%C4%B0zmir_%C5%9Eehir_Hastanesi_5.jpg",
+  "size": [
+   11840,
+   5328
+  ],
+  "width": 1600,
+  "height": 837
+ },
+ "campus": {
+  "id": "cm:54054303",
+  "title": "File:UFV Chandigarh + SD College students (25534810033).jpg",
+  "user": "University of the Fraser Valley",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:UFV_Chandigarh_%2B_SD_College_students_(25534810033).jpg",
+  "size": [
+   4655,
+   6975
+  ],
+  "width": 1200,
+  "height": 1259
+ },
+ "coworking": {
+  "id": "cm:87855267",
+  "title": "File:Openspace wao coworking.jpg",
+  "user": "WAO Coworking",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Openspace_wao_coworking.jpg",
+  "size": [
+   5472,
+   3648
+  ],
+  "width": 1600,
+  "height": 1066
+ },
+ "factory": {
+  "id": "cm:179452691",
+  "title": "File:Metallurgical Furnace in Guwahati, Assam.jpg",
+  "user": "Donvikro",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Metallurgical_Furnace_in_Guwahati,_Assam.jpg",
+  "size": [
+   2048,
+   1365
+  ],
+  "width": 1060,
+  "height": 1333
+ },
+ "gym": {
+  "id": "cm:116285194",
+  "title": "File:Fit young man doing deadlift exercise in gym.jpg",
+  "user": "Nenad Stojkovic",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fit_young_man_doing_deadlift_exercise_in_gym.jpg",
+  "size": [
+   6016,
+   4016
+  ],
+  "width": 1600,
+  "height": 1068
+ },
+ "chai": {
+  "id": "cm:125328485",
+  "title": "File:Masala Tea - 2.jpg",
+  "user": "Sarkar Sayantan",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Masala_Tea_-_2.jpg",
+  "size": [
+   3805,
+   5719
+  ],
+  "width": 1200,
+  "height": 1443
+ },
+ "machines-corner": {
+  "id": "cm:163498111",
+  "title": "File:Soft drink and snack vending machines, Chico (2025)-L1007024.jpg",
+  "user": "Frank Schulenburg",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Soft_drink_and_snack_vending_machines,_Chico_(2025)-L1007024.jpg",
+  "size": [
+   8630,
+   6164
+  ],
+  "width": 1600,
+  "height": 1143
+ },
+ "city": {
+  "id": "cm:37875716",
+  "title": "File:Mumbai skyline at 1830.jpg",
+  "user": "pronzz97 from Mumbai, India",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mumbai_skyline_at_1830.jpg",
+  "size": [
+   5184,
+   3456
+  ],
+  "width": 2000,
+  "height": 1333
+ }
+}

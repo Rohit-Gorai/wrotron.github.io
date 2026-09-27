@@ -1,19 +1,29 @@
 /**
  * Wrotron — site interactions
- * Navigation, hero machine, tabs, carousel, coverage picker, enquiry form.
+ * Navigation, photo fallbacks, tabs, carousel, coverage picker, enquiry form.
  */
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const SVG_NS = 'http://www.w3.org/2000/svg';
 const WHATSAPP_NUMBER = '918969309787';
+
+/* ---------------------------------------------------------------
+   Photos — if one fails to load, keep the designed placeholder
+---------------------------------------------------------------- */
+$$('.photo img').forEach((img) => {
+  const fail = () => img.closest('.photo').classList.add('failed');
+  if (img.complete && img.naturalWidth === 0 && img.currentSrc) fail();
+  img.addEventListener('error', fail, { once: true });
+});
 
 /* ---------------------------------------------------------------
    Navigation
 ---------------------------------------------------------------- */
 const nav = $('#nav');
 const navToggle = $('#nav-toggle');
+const mbar = $('#mbar');
+const hero = $('.hero');
 
 const setNavOpen = (open) => {
   nav.classList.toggle('open', open);
@@ -24,13 +34,11 @@ navToggle.addEventListener('click', () => setNavOpen(!nav.classList.contains('op
 $$('#nav-links a').forEach((a) => a.addEventListener('click', () => setNavOpen(false)));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNavOpen(false); });
 
-const machine = $('.machine');
 let ticking = false;
 const onScroll = () => {
   nav.classList.toggle('scrolled', window.scrollY > 8);
-  if (!reduceMotion && machine && window.scrollY < window.innerHeight * 1.5) {
-    machine.style.setProperty('--lift', `${Math.min(window.scrollY * -0.08, 0)}px`);
-  }
+  // Mobile quick-contact bar appears once the hero's own buttons are out of view
+  mbar?.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.7);
   ticking = false;
 };
 window.addEventListener('scroll', () => {
@@ -59,82 +67,14 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-$$('.reveal').forEach((el, i) => {
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+$$('.reveal').forEach((el) => {
   // Stagger siblings that sit in the same grid
   const siblings = $$(':scope > .reveal', el.parentElement);
   const idx = siblings.indexOf(el);
-  if (siblings.length > 1 && idx > 0) el.style.transitionDelay = `${Math.min(idx * 80, 400)}ms`;
+  if (siblings.length > 1 && idx > 0) el.style.transitionDelay = `${Math.min(idx * 70, 350)}ms`;
   revealObserver.observe(el);
 });
-
-/* ---------------------------------------------------------------
-   Hero machine — shelves, QR, keypad, screen
----------------------------------------------------------------- */
-const svgEl = (tag, attrs) => {
-  const el = document.createElementNS(SVG_NS, tag);
-  Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
-  return el;
-};
-
-const shelves = $('#shelves');
-if (shelves) {
-  const palette = ['#f56300', '#0a84ff', '#ffd60a', '#34c759', '#ff375f', '#bf5af2', '#64d2ff', '#ff9f0a'];
-  for (let row = 0; row < 5; row++) {
-    const shelfY = 56 + 80 * (row + 1) - 8;
-    shelves.appendChild(svgEl('rect', { x: 40, y: shelfY, width: 206, height: 4, fill: '#2c2c2e' }));
-    for (let col = 0; col < 4; col++) {
-      if (row === 1 && col === 2) continue; // this slot "drops" in the animation
-      const x = 52 + col * 48;
-      const h = [46, 40, 52, 44][(row + col) % 4];
-      const color = palette[(row * 3 + col) % palette.length];
-      const g = svgEl('g', {});
-      g.appendChild(svgEl('rect', { x, y: shelfY - h, width: 30, height: h, rx: 7, fill: color }));
-      g.appendChild(svgEl('rect', { x: x + 5, y: shelfY - h + 6, width: 4, height: h - 12, rx: 2, fill: '#fff', opacity: 0.3 }));
-      shelves.appendChild(g);
-    }
-  }
-}
-
-const qr = $('#qr');
-if (qr) {
-  // Decorative QR-style pattern (deterministic)
-  const n = 17, s = 2;
-  let seed = 7;
-  const rand = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-  const finder = (x, y) => (x < 5 && y < 5) || (x > n - 6 && y < 5) || (x < 5 && y > n - 6);
-  qr.appendChild(svgEl('rect', { x: -3, y: -3, width: n * s + 6, height: n * s + 6, rx: 3, fill: '#fff' }));
-  for (let y = 0; y < n; y++) {
-    for (let x = 0; x < n; x++) {
-      let on;
-      if (finder(x, y)) {
-        const lx = x > n - 6 ? x - (n - 5) : x;
-        const ly = y > n - 6 ? y - (n - 5) : y;
-        on = lx === 0 || ly === 0 || lx === 4 || ly === 4 || (lx === 2 && ly === 2);
-      } else {
-        on = rand() > 0.55;
-      }
-      if (on) qr.appendChild(svgEl('rect', { x: x * s, y: y * s, width: s, height: s, fill: '#1d1d1f' }));
-    }
-  }
-}
-
-const keypad = $('#keypad');
-if (keypad) {
-  for (let r = 0; r < 4; r++) {
-    for (let c = 0; c < 3; c++) {
-      keypad.appendChild(svgEl('circle', { cx: 277 + c * 14, cy: 196 + r * 16, r: 5 }));
-    }
-  }
-  keypad.appendChild(svgEl('rect', { x: 272, y: 276, width: 38, height: 6, rx: 3, fill: '#0b0b0d' }));
-}
-
-const screenText = $('#screen-text');
-if (screenText && !reduceMotion) {
-  const states = ['Choose', 'Scan to pay', 'Paid ✓', 'Enjoy!'];
-  let i = 0;
-  setInterval(() => { i = (i + 1) % states.length; screenText.textContent = states[i]; }, 1500);
-}
 
 /* ---------------------------------------------------------------
    Machine tabs
@@ -142,7 +82,7 @@ if (screenText && !reduceMotion) {
 const tabs = $$('[role="tab"]');
 const indicator = $('.tabs-ind');
 const moveIndicator = (tab) => {
-  if (!indicator) return;
+  if (!indicator || !tab) return;
   indicator.style.width = `${tab.offsetWidth}px`;
   indicator.style.transform = `translateX(${tab.offsetLeft}px)`;
 };
@@ -185,7 +125,7 @@ const updateCarButtons = () => {
 if (carousel) {
   carButtons.forEach((b) => b.addEventListener('click', () => {
     const card = $('.ind', carousel);
-    const step = card ? card.offsetWidth + 20 : carousel.clientWidth * 0.8;
+    const step = card ? card.offsetWidth + 18 : carousel.clientWidth * 0.8;
     carousel.scrollBy({ left: step * Number(b.dataset.dir), behavior: reduceMotion ? 'auto' : 'smooth' });
   }));
   carousel.addEventListener('scroll', updateCarButtons, { passive: true });
@@ -217,11 +157,11 @@ const addOptions = (label, list) => {
 addOptions('States', STATES);
 addOptions('Union Territories', UTS);
 
-const statesWall = $('#states');
 const goToContact = (focusEl) => {
   $('#contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   if (focusEl) setTimeout(() => focusEl.focus({ preventScroll: true }), reduceMotion ? 0 : 700);
 };
+const statesWall = $('#states');
 [...STATES.map((n) => [n, false]), ...UTS.map((n) => [n, true])].forEach(([name, isUT]) => {
   const b = document.createElement('button');
   b.type = 'button';
@@ -237,7 +177,7 @@ const goToContact = (focusEl) => {
 });
 const note = document.createElement('p');
 note.className = 'states-note';
-note.textContent = 'Outlined: union territories';
+note.textContent = 'Dashed outline: union territories';
 statesWall.appendChild(note);
 
 /* ---------------------------------------------------------------
@@ -246,6 +186,7 @@ statesWall.appendChild(note);
 const form = $('#lead-form');
 const statusEl = $('#form-status');
 const submitBtn = $('#submit');
+const SUBMIT_LABEL = submitBtn.textContent;
 
 // CTAs elsewhere on the page pre-fill the form
 $$('[data-space]').forEach((a) => a.addEventListener('click', () => {
@@ -392,7 +333,7 @@ form.addEventListener('submit', async (e) => {
     setStatus('Sorry, that didn’t go through. Please try again, send it via WhatsApp, or email admin.team@wrotron.in.', 'bad');
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Request my free survey';
+    submitBtn.textContent = SUBMIT_LABEL;
   }
 });
 
