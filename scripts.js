@@ -46,7 +46,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 onScroll();
 
-// Highlight the nav link for the section in view
+// Highlight the nav link for the section in view (none for sections not in the menu)
 const navLinks = new Map($$('#nav-links a').map((a) => [a.getAttribute('href').slice(1), a]));
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -55,11 +55,15 @@ const sectionObserver = new IntersectionObserver((entries) => {
     navLinks.get(entry.target.id)?.classList.add('active');
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
-navLinks.forEach((_, id) => { const s = document.getElementById(id); if (s) sectionObserver.observe(s); });
+$$('main > section[id]').forEach((s) => sectionObserver.observe(s));
 
 /* ---------------------------------------------------------------
    Scroll reveal
+   Any sliver of an element on screen reveals it (threshold 0), so tall
+   blocks like the enquiry form can never get stuck invisible.
 ---------------------------------------------------------------- */
+const reveals = $$('.reveal');
+const revealAll = () => reveals.forEach((el) => el.classList.add('in'));
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -67,14 +71,34 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-$$('.reveal').forEach((el) => {
+}, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
+reveals.forEach((el) => {
   // Stagger siblings that sit in the same grid
   const siblings = $$(':scope > .reveal', el.parentElement);
   const idx = siblings.indexOf(el);
   if (siblings.length > 1 && idx > 0) el.style.transitionDelay = `${Math.min(idx * 70, 350)}ms`;
   revealObserver.observe(el);
 });
+
+/* ---------------------------------------------------------------
+   Deep links (e.g. wrotron.in/#contact)
+   The browser jumps to the section before fonts and photos finish
+   loading, which can shift it. Show content straight away and settle
+   on the right spot again once the page is ready, unless the visitor
+   has started scrolling themselves.
+---------------------------------------------------------------- */
+const hashTarget = () => {
+  try { return location.hash.length > 1 ? document.querySelector(decodeURIComponent(location.hash)) : null; } catch { return null; }
+};
+if (hashTarget()) {
+  revealAll();
+  let userMoved = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) =>
+    window.addEventListener(ev, () => { userMoved = true; }, { once: true, passive: true }));
+  const settle = () => { const t = hashTarget(); if (t && !userMoved) t.scrollIntoView({ block: 'start' }); };
+  document.fonts?.ready.then(settle);
+  window.addEventListener('load', () => { settle(); setTimeout(settle, 400); });
+}
 
 /* ---------------------------------------------------------------
    Machine tabs
