@@ -111,20 +111,6 @@
   "width": 1600,
   "height": 1068
  },
- "chai": {
-  "id": "cm:125328485",
-  "title": "File:Masala Tea - 2.jpg",
-  "user": "Sarkar Sayantan",
-  "license": "CC BY-SA 4.0",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Masala_Tea_-_2.jpg",
-  "size": [
-   3805,
-   5719
-  ],
-  "width": 1200,
-  "height": 1443
- },
  "machines-corner": {
   "id": "cm:163498111",
   "title": "File:Soft drink and snack vending machines, Chico (2025)-L1007024.jpg",
@@ -139,18 +125,33 @@
   "width": 1600,
   "height": 1143
  },
- "city": {
-  "id": "cm:37875716",
-  "title": "File:Mumbai skyline at 1830.jpg",
-  "user": "pronzz97 from Mumbai, India",
-  "license": "CC BY 2.0",
-  "license_url": "https://creativecommons.org/licenses/by/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Mumbai_skyline_at_1830.jpg",
+ "restock": {
+  "id": "cm:41662842",
+  "title": "File:USS Blue Ridge operations 150618-N-NT747-022.jpg",
+  "user": "June 18, 2015",
+  "license": "Public domain",
+  "license_url": "",
+  "page": "https://commons.wikimedia.org/wiki/File:USS_Blue_Ridge_operations_150618-N-NT747-022.jpg",
   "size": [
-   5184,
-   3456
+   2100,
+   1398
   ],
-  "width": 2000,
-  "height": 1333
+  "width": 1400,
+  "height": 845,
+  "note": "Cropped; background signage blurred"
+ },
+ "hotel": {
+  "id": "cm:51605005",
+  "title": "File:Entrance Lobby - Regenta Almeida - Royal Orchid Hotels Ltd - Zirakpur - Chandigarh 2016-08-08 9149.JPG",
+  "user": "Biswarup Ganguly",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Entrance_Lobby_-_Regenta_Almeida_-_Royal_Orchid_Hotels_Ltd_-_Zirakpur_-_Chandigarh_2016-08-08_9149.JPG",
+  "size": [
+   6016,
+   4000
+  ],
+  "width": 1600,
+  "height": 1064
  }
 }

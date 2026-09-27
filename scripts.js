@@ -1,12 +1,14 @@
 /**
  * Wrotron — site interactions
- * Navigation, photo fallbacks, tabs, carousel, coverage picker, enquiry form.
+ * Navigation, reveals, proof data, vending demo, business-case estimate, enquiry form.
  */
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const WHATSAPP_NUMBER = '918969309787';
+const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
+const num = (n) => Math.round(n).toLocaleString('en-IN');
 
 /* ---------------------------------------------------------------
    Photos — if one fails to load, keep the designed placeholder
@@ -34,11 +36,13 @@ navToggle.addEventListener('click', () => setNavOpen(!nav.classList.contains('op
 $$('#nav-links a').forEach((a) => a.addEventListener('click', () => setNavOpen(false)));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNavOpen(false); });
 
+const contact = $('#contact');
 let ticking = false;
 const onScroll = () => {
-  nav.classList.toggle('scrolled', window.scrollY > 8);
-  // Mobile quick-contact bar appears once the hero's own buttons are out of view
-  mbar?.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.7);
+  // Mobile action bar: after the hero, hidden again while the form itself is on screen
+  const r = contact.getBoundingClientRect();
+  const formVisible = r.top < window.innerHeight * 0.6 && r.bottom > 0;
+  mbar?.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.8 && !formVisible);
   ticking = false;
 };
 window.addEventListener('scroll', () => {
@@ -46,8 +50,8 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 onScroll();
 
-// Highlight the nav link for the section in view (none for sections not in the menu)
-const navLinks = new Map($$('#nav-links a').map((a) => [a.getAttribute('href').slice(1), a]));
+// Highlight the menu link for the section in view (none for sections not in the menu)
+const navLinks = new Map($$('#nav-links a[href^="#"]').map((a) => [a.getAttribute('href').slice(1), a]));
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -58,12 +62,9 @@ const sectionObserver = new IntersectionObserver((entries) => {
 $$('main > section[id]').forEach((s) => sectionObserver.observe(s));
 
 /* ---------------------------------------------------------------
-   Scroll reveal
-   Any sliver of an element on screen reveals it (threshold 0), so tall
-   blocks like the enquiry form can never get stuck invisible.
+   Scroll reveal — any overlap reveals, so tall blocks never stay hidden
 ---------------------------------------------------------------- */
 const reveals = $$('.reveal');
-const revealAll = () => reveals.forEach((el) => el.classList.add('in'));
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -73,25 +74,21 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
 reveals.forEach((el) => {
-  // Stagger siblings that sit in the same grid
   const siblings = $$(':scope > .reveal', el.parentElement);
   const idx = siblings.indexOf(el);
-  if (siblings.length > 1 && idx > 0) el.style.transitionDelay = `${Math.min(idx * 70, 350)}ms`;
+  if (siblings.length > 1 && idx > 0) el.style.transitionDelay = `${Math.min(idx * 70, 420)}ms`;
   revealObserver.observe(el);
 });
 
 /* ---------------------------------------------------------------
-   Deep links (e.g. wrotron.in/#contact)
-   The browser jumps to the section before fonts and photos finish
-   loading, which can shift it. Show content straight away and settle
-   on the right spot again once the page is ready, unless the visitor
-   has started scrolling themselves.
+   Deep links (e.g. wrotron.in/#contact): show content straight away and
+   settle on the target again once fonts and photos have loaded.
 ---------------------------------------------------------------- */
 const hashTarget = () => {
   try { return location.hash.length > 1 ? document.querySelector(decodeURIComponent(location.hash)) : null; } catch { return null; }
 };
 if (hashTarget()) {
-  revealAll();
+  reveals.forEach((el) => el.classList.add('in'));
   let userMoved = false;
   ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) =>
     window.addEventListener(ev, () => { userMoved = true; }, { once: true, passive: true }));
@@ -101,108 +98,133 @@ if (hashTarget()) {
 }
 
 /* ---------------------------------------------------------------
-   Machine tabs
+   Proof blocks — rendered only from real data in #site-data
 ---------------------------------------------------------------- */
-const tabs = $$('[role="tab"]');
-const indicator = $('.tabs-ind');
-const moveIndicator = (tab) => {
-  if (!indicator || !tab) return;
-  indicator.style.width = `${tab.offsetWidth}px`;
-  indicator.style.transform = `translateX(${tab.offsetLeft}px)`;
-};
-const selectTab = (tab, focus = false) => {
-  tabs.forEach((t) => {
-    const on = t === tab;
-    t.setAttribute('aria-selected', String(on));
-    t.tabIndex = on ? 0 : -1;
-    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-  });
-  moveIndicator(tab);
-  if (focus) tab.focus();
-};
-tabs.forEach((tab, i) => {
-  tab.addEventListener('click', () => selectTab(tab));
-  tab.addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-    selectTab(next, true);
-  });
-});
-if (tabs.length) {
-  const initTabs = () => moveIndicator(tabs.find((t) => t.getAttribute('aria-selected') === 'true'));
-  initTabs();
-  window.addEventListener('resize', initTabs);
-  document.fonts?.ready.then(initTabs);
+let siteData = {};
+try { siteData = JSON.parse($('#site-data')?.textContent || '{}'); } catch { siteData = {}; }
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+if (siteData.metrics?.length) {
+  const el = $('#metrics');
+  el.innerHTML = siteData.metrics.map((m) => `<div class="metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join('');
+  el.hidden = false;
+}
+if (siteData.clients?.length) {
+  $('#clients-row').innerHTML = siteData.clients.map((c) => (c.logo
+    ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}" height="32" loading="lazy">`
+    : `<span>${esc(c.name)}</span>`)).join('');
+  $('#clients').hidden = false;
+}
+if (siteData.caseStudies?.length) {
+  const el = $('#cases');
+  el.innerHTML = siteData.caseStudies.map((c) => `
+    <article class="case">
+      <h3>${esc(c.customer)}</h3>
+      ${c.location ? `<p class="fine">${esc(c.location)}</p>` : ''}
+      <dl><dt>Challenge</dt><dd>${esc(c.challenge)}</dd><dt>Solution</dt><dd>${esc(c.solution)}</dd></dl>
+      ${c.results?.length ? `<div class="case-results">${c.results.map((r) => `<div><b>${esc(r.value)}</b><span>${esc(r.label)}</span></div>`).join('')}</div>` : ''}
+    </article>`).join('');
+  el.hidden = false;
 }
 
 /* ---------------------------------------------------------------
-   Industries carousel
+   Vending demo
 ---------------------------------------------------------------- */
-const carousel = $('#carousel');
-const carButtons = $$('.car-btn');
-const updateCarButtons = () => {
-  const max = carousel.scrollWidth - carousel.clientWidth - 2;
-  carButtons.forEach((b) => {
-    b.disabled = b.dataset.dir === '-1' ? carousel.scrollLeft <= 2 : carousel.scrollLeft >= max;
-  });
-};
-if (carousel) {
-  carButtons.forEach((b) => b.addEventListener('click', () => {
-    const card = $('.ind', carousel);
-    const step = card ? card.offsetWidth + 18 : carousel.clientWidth * 0.8;
-    carousel.scrollBy({ left: step * Number(b.dataset.dir), behavior: reduceMotion ? 'auto' : 'smooth' });
+const kiosk = $('#kiosk');
+if (kiosk) {
+  const views = Object.fromEntries($$('.k-view', kiosk).map((v) => [v.dataset.view, v]));
+  const steps = $$('#demo-steps li');
+  const tray = $('#k-tray');
+  const show = (name, step) => {
+    Object.entries(views).forEach(([k, v]) => { v.hidden = k !== name; });
+    steps.forEach((s, i) => s.classList.toggle('on', i === step));
+  };
+  // Decorative QR-style pattern (deterministic)
+  const qr = $('#k-qr');
+  let seed = 11;
+  const rand = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const finder = (x, y) => {
+    const f = (a, b) => a >= 0 && a < 7 && b >= 0 && b < 7 && (a === 0 || b === 0 || a === 6 || b === 6 || (a >= 2 && a <= 4 && b >= 2 && b <= 4));
+    const inBox = (a, b) => a >= 0 && a < 7 && b >= 0 && b < 7;
+    if (inBox(x, y)) return f(x, y);
+    if (inBox(x - 14, y)) return f(x - 14, y);
+    if (inBox(x, y - 14)) return f(x, y - 14);
+    return null;
+  };
+  let cells = '';
+  for (let y = 0; y < 21; y++) for (let x = 0; x < 21; x++) {
+    const fv = finder(x, y);
+    cells += (fv === null ? rand() > 0.52 : fv) ? '<i></i>' : '<b></b>';
+  }
+  qr.innerHTML = cells;
+
+  let current = null;
+  $$('.k-item', kiosk).forEach((b) => b.addEventListener('click', () => {
+    current = { name: b.dataset.name, price: Number(b.dataset.price) };
+    $('#k-amount').textContent = inr(current.price);
+    $('#k-name').textContent = current.name;
+    tray.classList.remove('in');
+    show('pay', 1);
+    $('#k-pay').focus({ preventScroll: true });
   }));
-  carousel.addEventListener('scroll', updateCarButtons, { passive: true });
-  window.addEventListener('resize', updateCarButtons);
-  updateCarButtons();
+  $('#k-back').addEventListener('click', () => show('choose', 0));
+  $('#k-pay').addEventListener('click', () => {
+    show('done', 1);
+    const bar = $('#k-progress');
+    const title = $('#k-done-title');
+    const sub = $('#k-done-sub');
+    const again = $('#k-again');
+    again.hidden = true;
+    title.textContent = 'Payment successful';
+    sub.textContent = 'Dispensing…';
+    bar.style.transition = 'none';
+    bar.style.width = '0';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      bar.style.transition = '';
+      bar.style.width = '100%';
+    }));
+    setTimeout(() => {
+      title.textContent = 'Collect your item';
+      sub.textContent = `${current.name} is in the tray below.`;
+      tray.textContent = current.name;
+      tray.classList.add('in');
+      steps.forEach((s, i) => s.classList.toggle('on', i === 2));
+      again.hidden = false;
+    }, reduceMotion ? 0 : 1700);
+  });
+  $('#k-again').addEventListener('click', () => { tray.classList.remove('in'); show('choose', 0); });
 }
 
 /* ---------------------------------------------------------------
-   Coverage — states & union territories of India
+   Business-case estimate (illustrative, user-controlled assumptions)
 ---------------------------------------------------------------- */
-const STATES = [
-  'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana',
-  'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
-  'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana',
-  'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
-];
-const UTS = [
-  'Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli and Daman and Diu', 'Delhi',
-  'Jammu and Kashmir', 'Ladakh', 'Lakshadweep', 'Puducherry',
-];
-
-const stateSelect = $('#f-state');
-const addOptions = (label, list) => {
-  const group = document.createElement('optgroup');
-  group.label = label;
-  list.forEach((name) => group.appendChild(new Option(name, name)));
-  stateSelect.appendChild(group);
+const calcFields = ['people', 'share', 'ticket', 'days'];
+const calcRecalc = () => {
+  const v = Object.fromEntries(calcFields.map((k) => [k, Math.max(0, Number($(`#c-${k}`).value) || 0)]));
+  const perDay = v.people * (Math.min(v.share, 100) / 100);
+  const perMonth = perDay * Math.min(v.days, 31);
+  $('#o-day').textContent = num(perDay);
+  $('#o-month').textContent = num(perMonth);
+  $('#o-sales').textContent = inr(perMonth * v.ticket);
 };
-addOptions('States', STATES);
-addOptions('Union Territories', UTS);
-
-const goToContact = (focusEl) => {
-  $('#contact').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-  if (focusEl) setTimeout(() => focusEl.focus({ preventScroll: true }), reduceMotion ? 0 : 700);
-};
-const statesWall = $('#states');
-[...STATES.map((n) => [n, false]), ...UTS.map((n) => [n, true])].forEach(([name, isUT]) => {
-  const b = document.createElement('button');
-  b.type = 'button';
-  b.textContent = name;
-  b.setAttribute('role', 'listitem');
-  if (isUT) b.className = 'ut';
-  b.addEventListener('click', () => {
-    stateSelect.value = name;
-    clearError(stateSelect);
-    goToContact($('#f-city'));
+if ($('#calc')) {
+  calcFields.forEach((k) => {
+    const n = $(`#c-${k}`);
+    const r = $(`#c-${k}-r`);
+    const fill = () => { r.style.setProperty('--fill', `${((r.value - r.min) / (r.max - r.min)) * 100}%`); };
+    r.addEventListener('input', () => { n.value = r.value; fill(); calcRecalc(); });
+    n.addEventListener('input', () => { r.value = n.value; fill(); calcRecalc(); });
+    fill();
   });
-  statesWall.appendChild(b);
-});
-const note = document.createElement('p');
-note.className = 'states-note';
-note.textContent = 'Dashed outline: union territories';
-statesWall.appendChild(note);
+  calcRecalc();
+  $('#calc-cta').addEventListener('click', () => {
+    const people = Number($('#c-people').value) || 0;
+    const band = people < 100 ? 'Under 100' : people <= 500 ? '100 – 500' : people <= 1000 ? '500 – 1,000' : people <= 5000 ? '1,000 – 5,000' : 'Over 5,000';
+    const sel = $('#f-people');
+    const opt = [...sel.options].find((o) => o.text === band);
+    if (opt) sel.value = opt.value || opt.text;
+  });
+}
 
 /* ---------------------------------------------------------------
    Enquiry form
@@ -213,13 +235,10 @@ const submitBtn = $('#submit');
 const SUBMIT_LABEL = submitBtn.textContent;
 
 // CTAs elsewhere on the page pre-fill the form
-$$('[data-space]').forEach((a) => a.addEventListener('click', () => {
-  const radio = $$('input[name="org_type"]', form).find((r) => r.value === a.dataset.space);
-  if (radio) radio.checked = true;
-}));
-$$('[data-stock]').forEach((a) => a.addEventListener('click', () => {
-  $$('input[name="stock"]', form).forEach((c) => { c.checked = c.value === a.dataset.stock; });
-  $('#stock-chips').classList.remove('invalid');
+$$('[data-space]').forEach((a) => a.addEventListener('click', () => { $('#f-type').value = a.dataset.space; }));
+$$('[data-interest]').forEach((a) => a.addEventListener('click', () => {
+  const box = $$('input[name="stock"]', form).find((c) => c.value === a.dataset.interest);
+  if (box) box.checked = true;
 }));
 $$('[data-note]').forEach((a) => a.addEventListener('click', () => {
   const msg = $('#f-msg');
@@ -230,12 +249,10 @@ const normalisePhone = (v) => v.replace(/[\s\-()]/g, '').replace(/^(\+91|0091|91
 
 const rules = {
   name: (v) => v.trim().length >= 2 || 'Please enter your name.',
+  org_name: (v) => v.trim().length >= 2 || 'Please enter your company or organisation.',
   phone: (v) => /^[6-9]\d{9}$/.test(normalisePhone(v)) || 'Please enter a valid 10-digit Indian mobile number.',
   email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Please enter a valid email address.',
-  org_name: (v) => v.trim().length >= 2 || 'Please enter your organisation’s name.',
   city: (v) => v.trim().length >= 2 || 'Please enter your city.',
-  state: (v) => v !== '' || 'Please select your state or UT.',
-  pincode: (v) => /^[1-9]\d{5}$/.test(v.trim()) || 'Please enter a valid 6-digit PIN code.',
 };
 
 function showError(input, message) {
@@ -259,7 +276,6 @@ function clearError(input) {
   input.removeAttribute('aria-invalid');
   $('.err', field)?.remove();
 }
-
 const validateField = (input) => {
   const rule = rules[input.name];
   if (!rule) return true;
@@ -268,14 +284,11 @@ const validateField = (input) => {
   showError(input, result);
   return false;
 };
-
 Object.keys(rules).forEach((name) => {
   const input = form.elements[name];
   input.addEventListener('blur', () => { if (input.value) validateField(input); });
   input.addEventListener('input', () => { if (input.closest('.field').classList.contains('invalid')) validateField(input); });
 });
-$('#f-pin').addEventListener('input', (e) => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6); });
-$$('input[name="stock"]', form).forEach((c) => c.addEventListener('change', () => $('#stock-chips').classList.remove('invalid')));
 
 const readForm = () => {
   const fd = new FormData(form);
@@ -284,12 +297,12 @@ const readForm = () => {
     phone: normalisePhone(fd.get('phone')),
     email: fd.get('email').trim(),
     org_name: fd.get('org_name').trim(),
-    org_type: fd.get('org_type'),
+    org_type: fd.get('org_type') || '',
     stock: fd.getAll('stock'),
     city: fd.get('city').trim(),
-    state: fd.get('state'),
-    pincode: fd.get('pincode').trim(),
-    footfall: fd.get('footfall'),
+    state: '',
+    pincode: '',
+    footfall: fd.get('footfall') || '',
     message: fd.get('message').trim(),
   };
 };
@@ -326,19 +339,13 @@ const loadFirebase = () => {
   firebasePromise.catch(() => { firebasePromise = undefined; });
   return firebasePromise;
 };
-// Warm up once the page is idle
 (window.requestIdleCallback || ((cb) => setTimeout(cb, 2000)))(() => loadFirebase().catch(() => {}));
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   setStatus('');
-
   const invalid = Object.keys(rules).map((n) => form.elements[n]).filter((input) => !validateField(input));
-  const stockOk = $$('input[name="stock"]:checked', form).length > 0;
-  $('#stock-chips').classList.toggle('invalid', !stockOk);
-  if (!stockOk) setStatus('Please choose at least one type of machine.', 'bad');
   if (invalid.length) { invalid[0].focus(); return; }
-  if (!stockOk) return;
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
@@ -351,10 +358,10 @@ form.addEventListener('submit', async (e) => {
       submittedAt: fs.serverTimestamp(),
     });
     form.reset();
-    setStatus('Thank you — your request is in. Our team will get in touch with you shortly.', 'ok');
+    setStatus('Thank you — your request is in. We’ll call you shortly to plan the site assessment.', 'ok');
   } catch (err) {
     console.error(err);
-    setStatus('Sorry, that didn’t go through. Please try again, send it via WhatsApp, or email admin.team@wrotron.in.', 'bad');
+    setStatus('Sorry, that didn’t go through. Please try again, send it on WhatsApp, or email admin.team@wrotron.in.', 'bad');
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = SUBMIT_LABEL;
@@ -365,12 +372,12 @@ form.addEventListener('submit', async (e) => {
 $('#wa-send').addEventListener('click', () => {
   const d = readForm();
   const lines = [
-    'Hi Wrotron, I’d like a free site survey.',
+    'Hi Wrotron, I’d like a free site assessment.',
     d.name && `Name: ${d.name}`,
-    d.org_name && `Organisation: ${d.org_name} (${d.org_type})`,
-    d.stock.length && `Interested in: ${d.stock.join(', ')}`,
-    (d.city || d.state) && `Location: ${[d.city, d.state, d.pincode].filter(Boolean).join(', ')}`,
-    d.footfall && `Daily footfall: ${d.footfall}`,
+    d.org_name && `Organisation: ${d.org_name}${d.org_type ? ` (${d.org_type})` : ''}`,
+    d.city && `City: ${d.city}`,
+    d.footfall && `People: ${d.footfall}`,
+    d.stock.length && `Looking for: ${d.stock.join(', ')}`,
     d.phone && `Phone: ${d.phone}`,
     d.email && `Email: ${d.email}`,
     d.message && `Notes: ${d.message}`,
@@ -378,7 +385,4 @@ $('#wa-send').addEventListener('click', () => {
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
 });
 
-/* ---------------------------------------------------------------
-   Footer year
----------------------------------------------------------------- */
 $('#year').textContent = new Date().getFullYear();
